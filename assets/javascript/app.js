@@ -1,0 +1,5 @@
+/*
+
+    This file handles the main aspects of the application
+
+*/
