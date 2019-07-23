@@ -1,0 +1,5 @@
+/* 
+
+    This file handles the authentication with firebase
+
+*/

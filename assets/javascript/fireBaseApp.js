@@ -1,0 +1,5 @@
+/* 
+
+    This file handles seting up the fire base application
+
+*/
