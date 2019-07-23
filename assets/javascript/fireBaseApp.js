@@ -4,7 +4,6 @@
 
 */
 
-
 $(document).ready(function () {
 
     // Todo fill out info
