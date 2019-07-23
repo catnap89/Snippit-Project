@@ -1,13 +1,21 @@
+body{
+  
+    
+}
+
+
 .vertical-menu {
   width: 200px;
 }
 
 .vertical-menu a {
-  background-color: rgb(8, 5, 17);
-  color: rgb(1, 1, 255);
+  background-color:  white;
+  color: black;
+  text-shadow: 0 0 5px #fff, 0 0 20px #fff, 0 0 20px #1607f3, 0 0 30px #1607f3, 0 0 40px #1607f3, 0 0 55px #1607f3, 0 0 75px #1607f3;
   display: block;
   padding: 12px;
   text-decoration: none;
+  box-shadow: 0 0 10px #1607f3; 
 }
 
 .vertical-menu a:hover {
@@ -15,14 +23,8 @@
 }
 
 .vertical-menu a.active {
-  background-color: rgb(8, 5, 17);
-  color:rgb(1, 1, 255);
+  background-color: white;
+  color: black;
+  box-shadow: 0 0 5px #1607f3; 
 }
 
-h1 {
-    font-size: 90px;
-    font-family: 'Futura';
-    color: rgb(12, 12, 12);
-    text-shadow: 0 0 5px #fff, 0 0 20px #fff, 0 0 20px #1607f3, 0 0 30px #1607f3, 0 0 40px #1607f3, 0 0 55px #1607f3, 0 0 75px #1607f3;
-
-}
