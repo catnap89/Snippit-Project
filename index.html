@@ -12,7 +12,8 @@
     <link rel="stylesheet" href="assets/css/reset.css">
     <!--css-->
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/4.1.0/firebaseui.css">
-    </link>
+    <!-- codemirror css -->
+    <link rel="stylesheet" type="text/css" href="assets/codemirror/lib/codemirror.css">
     <!-- assets/css/style.css -->
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
     <!-- Bootstrap CSS -->
@@ -67,8 +68,9 @@
         </div>
 
         <div class="modal" tabindex="-1" role="dialog" id="main-modal-div">
-            <div class="modal-dialog" role="document">
+            <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
                 <div class="modal-content">
+
                     <div class="modal-header">
                         <h5 class="modal-title">Snippit</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Cancel">
@@ -76,13 +78,14 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <p>Modal body text goes here.</p>
+                        <!-- codemirror -->
+                        <textarea class="codemirror-textarea"></textarea>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal"
-                            id="model-cancel-btn">Cancel</button>
-                        <button type="button" class="btn btn-primary" id="modal-save-btn">Save</button>
+                        <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal" id="model-cancel-btn">Cancel</button> -->
+                        <button type="button" class="btn btn-primary" id="modal-save-btn">Save Snippit</button>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -119,12 +122,11 @@
         <!-- assets/javascript/app.js -->
         <script src="assets/javascript/fireBaseApp.js" defer></script>
 
-        <script src="assets/javascript/app.js" defer></script>
-
         <script src="assets/javascript/auth.js"defer></script>
 
-        <script src="assets/javascript/codemirror.js" defer></script>
+        <script type="text/javascript" src="assets/codemirror/lib/codemirror.js" defer></script>
 
+        <script src="assets/javascript/app.js" defer></script>
 
 
 </body>
