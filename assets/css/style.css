@@ -3,22 +3,30 @@ body{
 }
 
 .main-content-container {
-  border: 1px solid red;
-}
+    border: 1px solid red;
 
-.side-navbar {
-  border: 1PX solid blue;
+  }
+
+.main-row {
+    margin-top: 10px;
 }
- 
+  
+  .side-navbar {
+    border: 1PX solid blue;
+  }
+   
 #snippit {
-  box-shadow: 0 0 10px #1607f3;
-  margin-left: 0px;
-  padding: 10px 10px 10px 10px;
-  border: 1px solid black;
+   
+    box-shadow: 0 0 10px #1607f3;
+    margin-left: 60px;
+    padding: 10px 10px 10px 10px;
+    border: 1px solid black;
+
 }
 
 .vertical-menu {
-  margin-right: 10px;
+    margin-right: 10px;
+    width: 200px;
 }
 
 .vertical-menu a {
@@ -71,14 +79,14 @@ body{
     background-repeat: no-repeat;
     background-position: right;
     position: relative;
-    margin-left: 300px;
+    margin-left: 20px;
 }
 #scissors div {
     position: relative;
     top: 50%;
     border-top: 3px dashed black;
     margin-top: -3px;
-    margin-left: 300px;
+    margin-left: 20px;
 }
 
 #scissors {
@@ -90,7 +98,7 @@ body{
     background-position: right;
     position: relative;
     overflow: hidden;
-    margin-left: 300px;
+    margin-left: 20px;
 }
 #scissors:after {
     content: "";
@@ -99,7 +107,7 @@ body{
     display: block;
     border-top: 3px dashed black;
     margin-top: -3px;
-    margin-left: 300px;
+    margin-left: 20px;
 }
 
 
