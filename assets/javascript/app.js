@@ -19,7 +19,7 @@ $(document).ready(function() {
         // Declare variables
         var editKey = ''; // variable to store reference key to firebase for editing correspond data
         var textarea = $('.Codemirror-Code');
-        var snippit = editor.getValue("\n"); // grab value of the codemirror textarea 
+        var snippit = htmlEditor.getValue("\n"); // grab value of the codemirror textarea 
         var userId; // maybe this can be used somehow
 
         // Using conditional statement to prevent data to be pushed to the database when there is no codes writeen in the textaera.
