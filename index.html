@@ -12,8 +12,8 @@
     <link rel="stylesheet" href="assets/css/reset.css">
     <!--css-->
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/4.1.0/firebaseui.css">
-    <!-- codemirror css -->
-    <link rel="stylesheet" type="text/css" href="assets/codemirror/lib/codemirror.css">
+    <!-- codemirror css cdn-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/codemirror.css">
     <!-- assets/css/style.css -->
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
     <!-- Bootstrap CSS -->
@@ -97,6 +97,7 @@
                     </div>
                 </div>
 
+                <!-- MODAL -->
                 <div class="modal" tabindex="-1" role="dialog" id="main-modal-div">
                     <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
                         <div class="modal-content">
@@ -109,8 +110,12 @@
                             </div>
                             
                             <div class="modal-body">
-                                <!-- codemirror -->
-                                <textarea class="codemirror-textarea"></textarea>
+                         
+                                <div class="code-container">
+                                    <!-- CODEMIRROR -->
+                                    <textarea id="codemirror"></textarea>
+                                </div>
+                    
                             </div>
                             <div class="modal-footer">
                                 <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal" id="model-cancel-btn">Cancel</button> -->
@@ -119,7 +124,7 @@
 
                         </div>
                     </div>
-                </div>
+                </div> <!-- Modal end-->
                 
                 <div class="scissors" style="width: 60rem;">
                     <div id="scissors"></div>
@@ -130,6 +135,16 @@
 
 
     </div>
+
+    <!-- scripts -->
+    <!-- <script type="text/javascript">
+        window.onload = () => {
+            // js syntax
+            function init(ok) {
+                return ok;
+            }
+        }
+    </script> -->
 
 
         <!-- jquery -->
@@ -149,16 +164,24 @@
         <!--js-->
         <script src="https://cdn.firebase.com/libs/firebaseui/4.1.0/firebaseui.js"></script>
 
+        <!-- codemirror -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/codemirror.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/mode/javascript/javascript.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/mode/xml/xml.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/mode/css/css.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/mode/htmlmixed/htmlmixed.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/keymap/sublime.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/addon/edit/closebrackets.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/addon/fold/xml-fold.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/addon/edit/closetag.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/addon/comment/comment.js"></script>
         <!-- moment.js -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 
         <!-- assets/javascript/app.js -->
         <script src="assets/javascript/fireBaseApp.js" defer></script>
-
         <script src="assets/javascript/auth.js" defer></script>
-
-        <script type="text/javascript" src="assets/codemirror/lib/codemirror.js" defer></script>
-
+        <script src="assets/javascript/codemirror.js"></script>
         <script src="assets/javascript/app.js" defer></script>
 
 
