@@ -1,17 +1,23 @@
 body{
   background: url(https://ycreativegroup.com/wp-content/uploads/2015/12/y-background.jpg);
 }
+
+.main-content-container {
+  border: 1px solid red;
+}
  
 #snippit {
    
-    box-shadow: 0 0 10px #1607f3;
-    margin-left: 300px;
-    padding: 10px 10px 10px 10px;
+  box-shadow: 0 0 10px #1607f3;
+  margin-left: 0px;
+  padding: 10px 10px 10px 10px;
+  border: 1px solid black;
 
 }
 
 .vertical-menu {
   width: 200px;
+  margin-right: 10px;
 }
 
 .vertical-menu a {
