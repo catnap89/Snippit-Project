@@ -25,7 +25,6 @@ $(document).ready(function () {
     // create a new database object
     const database = firebase.database();
 
-
     /*
         // set up the listener for when snippets are changed
         // we may not need this...
