@@ -1,8 +1,14 @@
 body{
-  
-    
+  background: url(https://ycreativegroup.com/wp-content/uploads/2015/12/y-background.jpg);
 }
+ 
+#snippit {
+   
+    box-shadow: 0 0 10px #1607f3;
+    margin-left: 300px;
+    padding: 10px 10px 10px 10px;
 
+}
 
 .vertical-menu {
   width: 200px;
@@ -15,7 +21,7 @@ body{
   display: block;
   padding: 12px;
   text-decoration: none;
-  box-shadow: 0 0 10px #1607f3; 
+  box-shadow: 0 0 5px #1607f3; 
 }
 
 .vertical-menu a:hover {
@@ -27,3 +33,65 @@ body{
   color: black;
   box-shadow: 0 0 5px #1607f3; 
 }
+
+#main-logout-btn {
+    box-shadow: 0 0 10px #1607f3;
+    background-color:  white;
+    color: black;
+    text-shadow: 0 0 5px #fff, 0 0 20px #fff, 0 0 20px #1607f3, 0 0 30px #1607f3, 0 0 40px #1607f3, 0 0 55px #1607f3, 0 0 75px #1607f3;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+    box-shadow: 0 0 5px #1607f3; 
+}
+
+#main-add-btn{
+    box-shadow: 0 0 10px #1607f3;
+    background-color:  white;
+    color: black;
+    text-shadow: 0 0 5px #fff, 0 0 20px #fff, 0 0 20px #1607f3, 0 0 30px #1607f3, 0 0 40px #1607f3, 0 0 55px #1607f3, 0 0 75px #1607f3;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+    box-shadow: 0 0 5px #1607f3; 
+}
+
+#scissors {
+    height: 43px; /* image height */
+    width: 90%;
+    margin: auto auto;
+    background-image: url('http://i.stack.imgur.com/cXciH.png');
+    background-repeat: no-repeat;
+    background-position: right;
+    position: relative;
+    margin-left: 300px;
+}
+#scissors div {
+    position: relative;
+    top: 50%;
+    border-top: 3px dashed black;
+    margin-top: -3px;
+    margin-left: 300px;
+}
+
+#scissors {
+    height: 43px; /* image height */
+    width: 90%;
+    margin: auto auto;
+    background-image: url('http://i.stack.imgur.com/cXciH.png');
+    background-repeat: no-repeat;
+    background-position: right;
+    position: relative;
+    overflow: hidden;
+    margin-left: 300px;
+}
+#scissors:after {
+    content: "";
+    position: relative;
+    top: 50%;
+    display: block;
+    border-top: 3px dashed black;
+    margin-top: -3px;
+    margin-left: 300px;
+}
+
