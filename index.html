@@ -24,101 +24,112 @@
 </head>
 
 <body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
-            aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-            <a class="navbar-brand mr-auto" href="#"><strong>Snippit<i class="fas fa-cut"></i></strong></a>
-            <form class="form-inline my-2 my-lg-0">
-                <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="main-add-btn">Add
-                    Snippit</button> -->
-                <!-- Button trigger modal-->
-                <button type="button" class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal" data-target="#main-modal-div" id="main-add-btn">Create Snippit</button>
-            </form>
-            <form class="form-inline my-2 my-lg-0">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="main-logout-btn">Log Out</button>
-            </form>
-        </div>
-    </nav>
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+                        aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                        <a class="navbar-brand mr-auto" href="#"><strong>Snippit<i class="fas fa-cut"></i></strong></a>
+                        <form class="form-inline my-2 my-lg-0">
+                            <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="main-add-btn">Add
+                                Snippit</button> -->
+                            <!-- Button trigger modal-->
+                            <button type="button" class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal" data-target="#main-modal-div" id="main-add-btn">Create Snippit</button>
+                        </form>
+                        <form class="form-inline my-2 my-lg-0">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="main-logout-btn">Log Out</button>
+                        </form>
+                        <div id="firebaseui-auth-container"></div>
+                    </div>
+                </nav>
 
-
-    <div class="vertical-menu">
-        <strong>
-            <a href="#" class="active">Home</a>
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
-            <a href="#">Link 4</a>
-            <a href="#">Link 5</a>
-            <a href="#">Link 6</a>
-            <a href="#">Link 7</a>
-            <a href="#">Link 8</a>
-        </strong>
-        
-        <div class="card" style="width: 60rem; " id="snippit">
-            <h5 class="card-header">Snippit</h5>
-            <div class="card-body">
-                <h5 class="card-title">Snippit title</h5>
-                <p class="card-text">code.</p>
             </div>
-        </div>
+        </div> <!-- row end -->
 
-        <br>
+        <div class="row">
+            <div class="col-md-2 side-navbar">
 
-        <div class="card" style="width: 60rem;" id="snippit">
-            <h5 class="card-header">Snippit</h5>
-            <div class="card-body">
-                <h5 class="card-title">Snippit title</h5>
+                <div class="vertical-menu">
+                    <strong>
+                        <a href="#" class="active">Home</a>
+                        <a href="#">Link 1</a>
+                        <a href="#">Link 2</a>
+                        <a href="#">Link 3</a>
+                        <a href="#">Link 4</a>
+                        <a href="#">Link 5</a>
+                        <a href="#">Link 6</a>
+                        <a href="#">Link 7</a>
+                        <a href="#">Link 8</a>
+                    </strong>
+                </div> 
 
-                <div class="adding-new-code" style="width: 60rem;">
-                    <label for="new-code" class="col-11 col-form-label">New Code</label>
-                    <div class="col-11">
-                        <input class="form-control" type="frequency" id="freq">
-                    </div>
-                </div> <br>
-                <a href="#" class="btn btn-primary" style="width: 6rem">Save</a>
             </div>
-        </div>
-        </div> 
 
-        <div class="modal" tabindex="-1" role="dialog" id="main-modal-div">
-            <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
-                <div class="modal-content">
+            <div class="col-md-10 main-content-container">
 
-                    <div class="modal-header">
-                        <h5 class="modal-title">Snippit</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Cancel">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
+                <div class="card" style="width: 40rem; " id="snippit">
+                    <h5 class="card-header">Snippit</h5>
+                    <div class="card-body">
+                        <h5 class="card-title">Snippit title</h5>
+                        <p class="card-text">code.</p>
                     </div>
-                    
-                    <div class="modal-body">
-                        <!-- codemirror -->
-                        <textarea class="codemirror-textarea"></textarea>
-                    </div>
-                    <div class="modal-footer">
-                        <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal" id="model-cancel-btn">Cancel</button> -->
-                        <button type="button" class="btn btn-primary" id="modal-save-btn">Save Snippit</button>
-                    </div>
+                </div>
 
+                <br>
+
+                <div class="card" style="width: 40rem;" id="snippit">
+                    <h5 class="card-header">Snippit</h5>
+                    <div class="card-body">
+                        <h5 class="card-title">Snippit title</h5>
+
+                        <div class="adding-new-code" style="width: 60rem;">
+                            <label for="new-code" class="col-11 col-form-label">New Code</label>
+                            <div class="col-11">
+                                <input class="form-control" type="frequency" id="freq">
+                            </div>
+                        </div> <br>
+                        <a href="#" class="btn btn-primary" style="width: 6rem">Save</a>
+                    </div>
+                </div>
+
+                <div class="modal" tabindex="-1" role="dialog" id="main-modal-div">
+                    <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+                        <div class="modal-content">
+
+                            <div class="modal-header">
+                                <h5 class="modal-title">Snippit</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Cancel">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            
+                            <div class="modal-body">
+                                <!-- codemirror -->
+                                <textarea class="codemirror-textarea"></textarea>
+                            </div>
+                            <div class="modal-footer">
+                                <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal" id="model-cancel-btn">Cancel</button> -->
+                                <button type="button" class="btn btn-primary" id="modal-save-btn">Save Snippit</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="scissors" style="width: 60rem;">
+                    <div id="scissors"></div>
                 </div>
             </div>
-        </div>
-        <div class="scissors" style="width: 60rem;">
-            <div id="scissors"></div>
-        </div>
+        </div> <!-- row end-->
 
 
 
-
-
-
-
-        <div id="firebaseui-auth-container"></div>
-
+    </div>
 
 
         <!-- jquery -->
