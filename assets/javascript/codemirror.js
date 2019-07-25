@@ -14,7 +14,7 @@
 var htmlEditor = CodeMirror.fromTextArea(document.getElementById("codemirror"), {
 	lineNumbers: true,			// gives a lineNumber gutter
 	mode: 'htmlmixed',			// sets syntax mode
-	theme: 'material',			// select theme
+	theme: 'mdn-like',			// select theme
 	
 	indentUnit: 4,				// default is 2
 	tabSize: 4,					// default already is 4
@@ -43,6 +43,7 @@ var htmlEditor = CodeMirror.fromTextArea(document.getElementById("codemirror"), 
 								// please note that I added these scripts: ../addon/fold/xml-fold.js
 								//										   ../addon/edit/closetag.js
 								// now type <div> in the editor
+  autoRefresh: true, // this fixed the issue with the textcursor located in a wrong place.
 });
 console.log(htmlEditor);
 /**
