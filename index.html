@@ -30,13 +30,13 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-            <a class="navbar-brand mr-auto" href="#"><strong>Snippit</strong></a>
+            <a class="navbar-brand mr-auto" href="#"><strong>Snippit<i class="fas fa-cut"></i></strong></a>
             <form class="form-inline my-2 my-lg-0">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="main-add-btn">Add
                     Snippit</button>
             </form>
             <form class="form-inline my-2 my-lg-0">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="main-login-btn">Log in</button>
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="main-logout-btn">Log Out</button>
             </form>
         </div>
     </nav>
@@ -54,15 +54,32 @@
             <a href="#">Link 7</a>
             <a href="#">Link 8</a>
         </strong>
-
-        <div class="card bg-light mb-3" style="width: 50rem;">
-            <div class="card-header">Header</div>
+        
+        <div class="card" style="width: 60rem; " id="snippit">
+            <h5 class="card-header">Snippit</h5>
             <div class="card-body">
-                <h5 class="card-title">Light card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's content.</p>
+                <h5 class="card-title">Snippit title</h5>
+                <p class="card-text">code.</p>
             </div>
         </div>
+
+        <br>
+
+        <div class="card" style="width: 60rem;" id="snippit">
+            <h5 class="card-header">Snippit</h5>
+            <div class="card-body">
+                <h5 class="card-title">Snippit title</h5>
+
+                <div class="adding-new-code" style="width: 60rem;">
+                    <label for="new-code" class="col-11 col-form-label">New Code</label>
+                    <div class="col-11">
+                        <input class="form-control" type="frequency" id="freq">
+                    </div>
+                </div> <br>
+                <a href="#" class="btn btn-primary" style="width: 6rem">Save</a>
+            </div>
+        </div>
+        </div> 
 
         <div class="modal" tabindex="-1" role="dialog" id="main-modal-div">
             <div class="modal-dialog" role="document">
@@ -73,6 +90,7 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
+                    
                     <div class="modal-body">
                         <p>Modal body text goes here.</p>
                     </div>
@@ -84,6 +102,10 @@
                 </div>
             </div>
         </div>
+        <div class="scissors" style="width: 60rem;">
+            <div id="scissors"></div>
+        </div>
+
 
 
 
@@ -119,7 +141,7 @@
 
         <script src="assets/javascript/app.js" defer></script>
 
-        <script src="assets/javascript/auth.js"defer></script>
+        <script src="assets/javascript/auth.js" defer></script>
 
         <script src="assets/javascript/codemirror.js" defer></script>
 
