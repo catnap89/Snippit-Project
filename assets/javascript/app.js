@@ -49,5 +49,12 @@ $(document).ready(function() {
     }
 
 
+    firebase.database().ref("/snippits").on("child_added", function(data) {
+        // get the current snippits info
+        data.val(); 
+        $(".code-text").text(data.val().snippit)
+    });
+
+
 })
 
