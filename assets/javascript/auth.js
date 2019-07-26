@@ -21,7 +21,7 @@ $(document).ready(function () {
     var ui = new firebaseui.auth.AuthUI(firebase.auth());
     // The start method will wait until the DOM is loaded.
 
-    ui.start('#firebaseui-auth-container', uiConfig);
+    
 
     firebase.auth().onAuthStateChanged(function (user) {
         if(user){
@@ -29,10 +29,11 @@ $(document).ready(function () {
             $("#firebaseui-auth-container").hide();
             $("#main-logout-btn").show()
         }else{
+            userID = null;
             $("#firebaseui-auth-container").show();
             $("#main-logout-btn").hide();
-            $(".snippets").remove();
-            userID = null;
+            $(".snippets").remove(); 
+            ui.start('#firebaseui-auth-container', uiConfig);
         }
     })
 
