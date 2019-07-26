@@ -27,6 +27,8 @@ $(document).ready(function() {
         var snippit = editor.getValue("\n"); // grab value of the codemirror textarea 
         console.log("Snippit: " + snippit);
         var name = $('#snippitName').val().trim();
+        var codeType = $('#langOption').find(":selected").attr("data-language");
+        console.log("codetype: " + codeType);
 
         // Using conditional statement to prevent data to be pushed to the database when there is no codes writeen in the textaera.
         if (snippit != '') {
@@ -39,12 +41,14 @@ $(document).ready(function() {
                 snippit: snippit,
                 userID: userID, // using global variable userID from auth.js
                 name: name,
+                type: codeType,
                 })
             } else if (editKey !== '') { // If there is editKey value --- THIS WILL BE USED FOR UPDATING EXISTING DATA. IF WE LET USERS TO CHANGE, MODIFY, ETC PREVIOUSLY SAVED SNIPPIT
                 database.ref('snippits/' + editKey).update({ // Locate database with provided editKey value as it's unique key in 'snippits' path and update database
                 snippit: snippit,
                 userID: userID, // using global variable userID from auth.js
                 name: name,
+                type: codeType,
                 })
                 editKey = ''; // Empty the editKey value once else if conditional is met and database is updated
             } 
