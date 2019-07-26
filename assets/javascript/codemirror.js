@@ -13,7 +13,7 @@
 
 
 
-var htmlEditor = CodeMirror.fromTextArea(document.getElementById("codemirror"), {
+var editor = CodeMirror.fromTextArea(document.getElementById("codemirror"), {
 	lineNumbers: true,			// gives a lineNumber gutter
 	mode: 'language',			// sets syntax mode
 	theme: 'mdn-like',			// select theme
@@ -47,26 +47,26 @@ var htmlEditor = CodeMirror.fromTextArea(document.getElementById("codemirror"), 
 								// now type <div> in the editor
   autoRefresh: true, // this fixed the issue with the textcursor located in a wrong place.
 });
-console.log(htmlEditor);
+console.log(editor);
 
 $('.code-type-html').on('click', function() {
   // htmlEditor.mode = 'html';
-  htmlEditor.setOption("mode", "htmlmixed");
+  editor.setOption("mode", "htmlmixed");
 
   //focus back to textarea
 })
 
 $('.code-type-css').on('click', function() {
-  htmlEditor.setOption("mode", "css");
+  editor.setOption("mode", "css");
 
 })
 
 $('.code-type-javascript').on('click', function() {
-  htmlEditor.setOption("mode", "javascript");
+  editor.setOption("mode", "javascript");
 
 })
 
-console.log(htmlEditor.mode);
+console.log(editor.mode);
 
 /**
  *
