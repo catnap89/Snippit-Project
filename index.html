@@ -31,8 +31,9 @@
             <div class="col-md-12">
 
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
-                        aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false"
+                        aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
@@ -41,10 +42,12 @@
                             <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="main-add-btn">Add
                                 Snippit</button> -->
                             <!-- Button trigger modal-->
-                            <button type="button" class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal" data-target="#main-modal-div" id="main-add-btn">Create Snippit</button>
+                            <button type="button" class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal"
+                                data-target="#main-modal-div" id="main-add-btn">Create Snippit</button>
                         </form>
                         <form class="form-inline my-2 my-lg-0">
-                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="main-logout-btn">Log Out</button>
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="main-logout-btn">Log
+                                Out</button>
                         </form>
                         <div id="firebaseui-auth-container"></div>
                     </div>
@@ -52,7 +55,7 @@
 
             </div>
         </div> <!-- row end -->
-<!--
+        <!--
         <div class="row main-row">
             <div class="col-md-2 side-navbar">
 
@@ -69,9 +72,9 @@
 
             </div>
         -->
-            <div class="col-md-10 main-content-container">
+        <div class="row main-content-container">
 
-                <!-- <div class="card" style="width: 40rem; " id="snippit">
+            <!-- <div class="card" style="width: 40rem; " id="snippit">
                     <h5 class="card-header">Snippit</h5>
                     <div class="card-body">
                         <h5 class="card-title">Snippit title</h5>
@@ -81,51 +84,54 @@
                     </div>
                 </div> -->
 
-                <br>
+            <br>
 
-                <!-- MODAL -->
-                <div class="modal" tabindex="-1" role="dialog" id="main-modal-div">
-                    <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
-                        <div class="modal-content">
+            <!-- MODAL -->
+            <div class="modal" tabindex="-1" role="dialog" id="main-modal-div">
+                <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+                    <div class="modal-content">
 
-                            <div class="modal-header">
-                                <h5 class="modal-title">Snippit</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Cancel">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
+                        <div class="modal-header">
+                            <h5 class="modal-title">Snippit</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Cancel">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+
+                        <div class="modal-body">
+                            <div class="code-type-nav">
+                                <button type="button" class="btn btn-sm btn-primary code-type-html">HTML</button>
+                                <button type="button" class="btn btn-sm btn-success code-type-css">CSS</button>
+                                <button type="button"
+                                    class="btn btn-sm btn-warning code-type-javascript">Javascript</button>
                             </div>
-                            
-                            <div class="modal-body">
-                                <div class="code-type-nav">
-                                    <button type="button" class="btn btn-sm btn-primary code-type-html">HTML</button>
-                                    <button type="button" class="btn btn-sm btn-success code-type-css">CSS</button>
-                                    <button type="button" class="btn btn-sm btn-warning code-type-javascript">Javascript</button>
-                                </div>
-                         
-                                <div class="code-container">
-                                    <!-- CODEMIRROR -->
-                                    <textarea id="codemirror"></textarea>
-                                </div>
-                    
-                            </div>
-                            <div class="modal-footer">
-                                <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal" id="model-cancel-btn">Cancel</button> -->
-                                <button type="button" class="btn btn-primary" id="modal-save-btn">Save Snippit</button>
-                                <button type="button" class="btn btn-secondary" id="modal-test-btn">Test Snippit</button>
+
+                            <div class="code-container">
+                                <!-- CODEMIRROR -->
+                                <textarea id="codemirror"></textarea>
                             </div>
 
                         </div>
+                        <div class="modal-footer">
+                            <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal" id="model-cancel-btn">Cancel</button> -->
+                            <button type="button" class="btn btn-primary" id="modal-save-btn">Save Snippit</button>
+                            <button type="button" class="btn btn-secondary" id="modal-test-btn">Test Snippit</button>
+                        </div>
+
                     </div>
-                </div> <!-- Modal end-->
-                
-                <!-- <div class="scissors" style="width: 60rem;">
+                </div>
+            </div> <!-- Modal end-->
+
+            <!-- <div class="scissors" style="width: 60rem;">
                     <div id="scissors"></div>
                 </div> -->
-            </div>
-        </div> <!-- row end-->
+        </div>
+    </div> <!-- row end-->
 
 
-
+    <div class="scissors">
+        <div id="scissors"></div>
+    </div>
     </div>
 
     <!-- scripts -->

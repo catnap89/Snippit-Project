@@ -4,6 +4,9 @@
 
 */
 
+var userID = null;
+
+
 $(document).ready(function () {
     const uiConfig = {
         signInSuccessUrl: '/',
@@ -18,17 +21,19 @@ $(document).ready(function () {
     var ui = new firebaseui.auth.AuthUI(firebase.auth());
     // The start method will wait until the DOM is loaded.
 
-    ui.start('#firebaseui-auth-container', uiConfig);
-
-
+    
 
     firebase.auth().onAuthStateChanged(function (user) {
         if(user){
+            userID = user.uid;
             $("#firebaseui-auth-container").hide();
             $("#main-logout-btn").show()
         }else{
+            userID = null;
             $("#firebaseui-auth-container").show();
             $("#main-logout-btn").hide();
+            $(".snippets").remove(); 
+            ui.start('#firebaseui-auth-container', uiConfig);
         }
     })
 

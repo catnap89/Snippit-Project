@@ -6,11 +6,11 @@ body{
     margin-top: 10px;
 }
   
-#snippit {
+.snippit {
    
     box-shadow: 0 0 10px #1607f3;
-    margin-left: 60px;
-    padding: 10px 10px 10px 10px;
+    margin-left: 40px;
+    margin-right: 40px;
     border: 1px solid black;
 
 }
@@ -52,10 +52,10 @@ body{
 }
 
 #main-add-btn{
-    box-shadow: 0 0 10px #1607f3;
+    box-shadow: 0 0 5px #1607f3;
     background-color:  white;
     color: black;
-    text-shadow: 0 0 5px #fff, 0 0 20px #fff, 0 0 20px #1607f3, 0 0 30px #1607f3, 0 0 40px #1607f3, 0 0 55px #1607f3, 0 0 75px #1607f3;
+    text-shadow: 0 0 20px #fff, 0 0 20px #fff, 0 0 20px #1607f3, 0 0 320px #1607f3, 0 0 20px #1607f3, 0 0 20px #1607f3, 0 0 20px #1607f3;
     display: block;
     padding: 12px;
     text-decoration: none;
