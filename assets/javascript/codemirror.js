@@ -11,7 +11,7 @@
     
 // })
 
-
+var language = $('#langOption').find(":selected").attr("data-language");
 
 var editor = CodeMirror.fromTextArea(document.getElementById("codemirror"), {
 	lineNumbers: true,			// gives a lineNumber gutter
@@ -49,22 +49,13 @@ var editor = CodeMirror.fromTextArea(document.getElementById("codemirror"), {
 });
 console.log(editor);
 
-$('.code-type-html').on('click', function() {
-  // htmlEditor.mode = 'html';
-  editor.setOption("mode", "htmlmixed");
-
-  //focus back to textarea
-})
-
-$('.code-type-css').on('click', function() {
-  editor.setOption("mode", "css");
-
-})
-
-$('.code-type-javascript').on('click', function() {
-  editor.setOption("mode", "javascript");
-
-})
+$('select').on('change', function() {
+    language = $('#langOption').find(":selected").attr("data-language");
+    console.log(language);
+    editor.setOption("mode", language);
+    
+});
+  
 
 console.log(editor.mode);
 
