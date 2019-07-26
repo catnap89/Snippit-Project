@@ -107,10 +107,20 @@
                         </div>
 
                         <div class="modal-body">
-                            <div class="code-type-nav">
-                                <button type="button" class="btn btn-sm btn-primary code-type-html">HTML</button>
-                                <button type="button" class="btn btn-sm btn-success code-type-css">CSS</button>
-                                <button type="button" class="btn btn-sm btn-warning code-type-javascript">Javascript</button>
+                            <div class="btn-group code-type-nav">
+                                <div class="action-buttons"></div>
+                                    <select id="langOption" name="language" class="language fill">
+                                        <option value="1" data-language="htmlmixed">html</option>
+                                        <option value="2" data-language="css">css</option>
+                                        <option value="3" data-language="javascript">javascript</option>
+                                    </select>
+                                
+                                    <!-- <button type="button" class="btn btn-sm btn-primary code-type-html">HTML</button>
+                                    <button type="button" class="btn btn-sm btn-success code-type-css">CSS</button>
+                                    <button type="button" class="btn btn-sm btn-warning code-type-javascript">Javascript</button> -->
+                                    <!-- <li class="active"></li>
+                                    <li></li>
+                                    <li></li> -->
                             </div>
 
                             <div class="code-container">
