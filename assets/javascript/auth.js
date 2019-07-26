@@ -31,6 +31,7 @@ $(document).ready(function () {
         }else{
             $("#firebaseui-auth-container").show();
             $("#main-logout-btn").hide();
+            $(".snippets").remove();
         }
     })
 

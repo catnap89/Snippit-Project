@@ -54,29 +54,28 @@ $(document).ready(function() {
 
     firebase.database().ref("/snippits").on("child_added", function(data) {
         // get the current snippits info
-        data.val(); 
-        $(".code-text").text(data.val().snippit);
-        let mainContainer = $(".main-content-container");
+        data.val();
+        let mainContainer = $(".main-content-container"); 
         let snippit = data.val();
-        console.log(snippit)
-        mainContainer.prepend(`
-        <div class="col-sm-12 col-md-6 mt-3">
-            <div class="card snippit" data-type=${snippit.type}>
-                    <h5 class="card-header">${snippit.name}</h5>
-                    <div class="card-body">
-                        <p class="card-text">
-                            <textarea disabled class="code-text">${snippit.snippit}</textarea>
-                        </p>
+        if(userID !== null && snippit.userID === userID){
+            mainContainer.prepend(`
+            <div class="col-sm-12 col-md-6 mt-3 snippets">
+                <div class="card snippit" data-type=${snippit.type}>
+                        <h5 class="card-header">${snippit.name}</h5>
+                        <div class="card-body">
+                            <p class="card-text">
+                                <textarea disabled class="code-text">${snippit.snippit}</textarea>
+                            </p>
+                    </div>
                 </div>
             </div>
-        </div>
-        `)
+            `);
+        }
     });
 
     function testSnippit () {
         //Pull up testing code from Code Mirror for current used Snippit
 
     }
-
 })
 
