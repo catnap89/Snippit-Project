@@ -15,6 +15,9 @@ $(document).ready(function() {
     // On click Save Snippit button (#modal-save-btn), push the snippit into firebase database and dynamically generate card with the code snippit.
     $('#modal-save-btn').on('click', saveSnippit);
 
+    // On click Test Snippit button (#model-test-btn), which pulls up test in code mirror for use.
+    $('#modal-test-btn').on('click') //testSnippit);
+
 
     // saveSnippit function
     function saveSnippit() {
@@ -55,6 +58,10 @@ $(document).ready(function() {
         $(".code-text").text(data.val().snippit)
     });
 
+    function testSnippit () {
+        //Pull up testing code from Code Mirror for current used Snippit
+
+    }
 
 })
 
