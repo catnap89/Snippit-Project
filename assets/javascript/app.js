@@ -62,21 +62,73 @@ $(document).ready(function() {
         data.val();
         let mainContainer = $(".main-content-container"); 
         let snippit = data.val();
+        var editKey = data.key;
+        console.log("editkey: " + editKey);
+        // data.forEach(function(childSnapshot) {
+        //     var editKey = childSnapshot.key;
+        //     console.log("editKey: " + editKey);
+        // })
         if(userID !== null && snippit.userID === userID){
             mainContainer.prepend(`
-            <div class="col-sm-12 col-md-6 mt-3 snippets">
+            <div class="col-sm-12 col-md-6 mt-3 snippets ${editKey}">
                 <div class="card snippit" data-type=${snippit.type}>
+                    <div class="card-btn-header">
                         <h5 class="card-header">${snippit.name}</h5>
-                        <div class="card-body">
-                            <p class="card-text">
-                                <textarea disabled class="code-text">${snippit.snippit}</textarea>
-                            </p>
+                        <button class='delete btn' data-editkey="${editKey}"><i class="fas fa-trash"></i></button>
+                    </div>
+                        
+                    <div class="card-body">
+                        <p class="card-text">
+                            <textarea disabled class="code-text">${snippit.snippit}</textarea>
+                        </p>
                     </div>
                 </div>
             </div>
             `);
         }
     });
+
+    // when data changes (deleted), this will update the cards, without the on child_changed function, cards gets removed upon clicking removed button but was displayed again
+    database.ref("/snippits").on('child_changed', function(data) {
+        // get the current snippits info
+        data.val();
+        let mainContainer = $(".main-content-container"); 
+        let snippit = data.val();
+        var editKey = data.key;
+        console.log("editkey: " + editKey);
+        // data.forEach(function(childSnapshot) {
+        //     var editKey = childSnapshot.key;
+        //     console.log("editKey: " + editKey);
+        // })
+        if(userID !== null && snippit.userID === userID){
+            mainContainer.html(`
+            <div class="col-sm-12 col-md-6 mt-3 snippets ${editKey}">
+                <div class="card snippit" data-type=${snippit.type}>
+                    <div class="card-btn-header">
+                        <h5 class="card-header">${snippit.name}</h5>
+                        <button class='delete btn' data-editkey="${editKey}"><i class="fas fa-trash"></i></button>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            <textarea disabled class="code-text">${snippit.snippit}</textarea>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            `);
+
+            
+        }
+
+    });
+
+    // Remove Snippit card and the data from the database
+    $(document).on('click', '.delete', function() {
+      var editKey = $(this).attr('data-editkey');
+      database.ref('snippits/' + editKey).remove();
+      $('.' + editKey).remove();
+
+    })
 
     function testSnippit () {
         //Pull up testing code from Code Mirror for current used Snippit
