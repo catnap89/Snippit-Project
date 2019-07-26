@@ -60,7 +60,7 @@ $(document).ready(function() {
         let snippit = data.val();
         console.log(snippit)
         mainContainer.prepend(`
-        <div class="col-sm-12 col-md-6">
+        <div class="col-sm-12 col-md-6 mt-3">
             <div class="card snippit">
                     <h5 class="card-header">${snippit.name}</h5>
                     <div class="card-body">

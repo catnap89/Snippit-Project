@@ -6,11 +6,10 @@ body{
     margin-top: 10px;
 }
   
-#snippit {
+.snippit {
    
     box-shadow: 0 0 10px #1607f3;
     margin-left: 60px;
-    padding: 10px 10px 10px 10px;
     border: 1px solid black;
 
 }
