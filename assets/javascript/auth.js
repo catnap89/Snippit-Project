@@ -4,6 +4,9 @@
 
 */
 
+var userID = null;
+
+
 $(document).ready(function () {
     const uiConfig = {
         signInSuccessUrl: '/',
@@ -20,10 +23,9 @@ $(document).ready(function () {
 
     ui.start('#firebaseui-auth-container', uiConfig);
 
-
-
     firebase.auth().onAuthStateChanged(function (user) {
         if(user){
+            userID = user.uid;
             $("#firebaseui-auth-container").hide();
             $("#main-logout-btn").show()
         }else{
