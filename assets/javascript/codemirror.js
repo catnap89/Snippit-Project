@@ -11,9 +11,11 @@
     
 // })
 
+
+
 var htmlEditor = CodeMirror.fromTextArea(document.getElementById("codemirror"), {
 	lineNumbers: true,			// gives a lineNumber gutter
-	mode: 'htmlmixed',			// sets syntax mode
+	mode: 'language',			// sets syntax mode
 	theme: 'mdn-like',			// select theme
 	
 	indentUnit: 4,				// default is 2
@@ -46,6 +48,26 @@ var htmlEditor = CodeMirror.fromTextArea(document.getElementById("codemirror"), 
   autoRefresh: true, // this fixed the issue with the textcursor located in a wrong place.
 });
 console.log(htmlEditor);
+
+$('.code-type-html').on('click', function() {
+  // htmlEditor.mode = 'html';
+  htmlEditor.setOption("mode", "htmlmixed");
+
+  //focus back to textarea
+})
+
+$('.code-type-css').on('click', function() {
+  htmlEditor.setOption("mode", "css");
+
+})
+
+$('.code-type-javascript').on('click', function() {
+  htmlEditor.setOption("mode", "javascript");
+
+})
+
+console.log(htmlEditor.mode);
+
 /**
  *
  * Sublime Text keyMap
