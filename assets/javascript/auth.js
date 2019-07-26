@@ -32,6 +32,7 @@ $(document).ready(function () {
             $("#firebaseui-auth-container").show();
             $("#main-logout-btn").hide();
             $(".snippets").remove();
+            userID = null;
         }
     })
 
