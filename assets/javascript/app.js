@@ -52,6 +52,30 @@ $(document).ready(function() {
     }
 
 
+    firebase.database().ref("/snippits").on("child_added", function(data) {
+        // get the current snippits info
+        data.val(); 
+        $(".code-text").text(data.val().snippit);
+        let mainContainer = $(".main-content-container");
+        let snippit = data.val();
+        console.log(snippit)
+        mainContainer.append(`
+        <div>
+            <div class="card snippit">
+                    <h5 class="card-header">${snippit.name}</h5>
+                    <div class="card-body">
+                        <p class="card-text">
+                            <textarea disabled class="code-text">${snippit.snippit}</textarea>
+                        </p>
+                </div>
+            </div>
+            <div class="scissors">
+                    <div id="scissors"></div>
+            </div>
+        </div>
+        `)
+    });
+
     function testSnippit () {
         //Pull up testing code from Code Mirror for current used Snippit
 

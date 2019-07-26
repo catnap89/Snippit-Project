@@ -2,19 +2,10 @@ body{
   background: url(https://ycreativegroup.com/wp-content/uploads/2015/12/y-background.jpg);
 }
 
-.main-content-container {
-    border: 1px solid red;
-
-  }
-
 .main-row {
     margin-top: 10px;
 }
   
-  .side-navbar {
-    border: 1PX solid blue;
-  }
-   
 #snippit {
    
     box-shadow: 0 0 10px #1607f3;
@@ -91,15 +82,15 @@ body{
 
 #scissors {
     height: 43px; /* image height */
-    width: 90%;
+    width: 100%;
     margin: auto auto;
     background-image: url('http://i.stack.imgur.com/cXciH.png');
     background-repeat: no-repeat;
-    background-position: right;
+    background-position: center;
     position: relative;
     overflow: hidden;
-    margin-left: 20px;
 }
+
 #scissors:after {
     content: "";
     position: relative;
@@ -107,7 +98,6 @@ body{
     display: block;
     border-top: 3px dashed black;
     margin-top: -3px;
-    margin-left: 20px;
 }
 
 
