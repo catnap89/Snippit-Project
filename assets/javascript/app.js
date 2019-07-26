@@ -59,8 +59,8 @@ $(document).ready(function() {
         let mainContainer = $(".main-content-container");
         let snippit = data.val();
         console.log(snippit)
-        mainContainer.append(`
-        <div>
+        mainContainer.prepend(`
+        <div class="col-sm-12 col-md-6">
             <div class="card snippit">
                     <h5 class="card-header">${snippit.name}</h5>
                     <div class="card-body">
@@ -68,9 +68,6 @@ $(document).ready(function() {
                             <textarea disabled class="code-text">${snippit.snippit}</textarea>
                         </p>
                 </div>
-            </div>
-            <div class="scissors">
-                    <div id="scissors"></div>
             </div>
         </div>
         `)
