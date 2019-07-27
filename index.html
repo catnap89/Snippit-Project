@@ -39,8 +39,6 @@
                     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
                         <a class="navbar-brand mr-auto" href="#"><strong>Snippit<i class="fas fa-cut"></i></strong></a>
                         <form class="form-inline my-2 my-lg-0">
-                            <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="main-add-btn">Add
-                                Snippit</button> -->
                             <!-- Button trigger modal-->
                             <button type="button" class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal"
                                 data-target="#main-modal-div" id="main-add-btn">Create Snippit</button>
@@ -55,34 +53,8 @@
 
             </div>
         </div> <!-- row end -->
-        <!--
-        <div class="row main-row">
-            <div class="col-md-2 side-navbar">
-
-                <div class="vertical-menu">
-                    <strong>
-                        <a href="#" class="active">Home</a>
-                        <a href="#">example</a>
-                        <a href="#">example</a>
-                        <a href="#">example</a>
-                        <a href="#">example</a>
-                        <a href="#">example</a>
-                    </strong>
-                </div> 
-
-            </div>
-        -->
+        
         <div class="row main-content-container">
-
-            <!-- <div class="card" style="width: 40rem; " id="snippit">
-                    <h5 class="card-header">Snippit</h5>
-                    <div class="card-body">
-                        <h5 class="card-title">Snippit title</h5>
-                        <p class="card-text">
-                            <textarea disabled class="code-text"> code </textarea>
-                        </p>
-                    </div>
-                </div> -->
 
             <br>
 
@@ -92,8 +64,8 @@
                     <div class="modal-content">
 
                         <div class="modal-header">
-                            <!-- <h5 class="modal-title">Snippit</h5> -->
-                            <form class="needs-validation" novalidate>
+        
+                            <form>
                                 <div class="form-group row font-weight-bold mt-3 ml-3 mr-3">
                                     <label for="name-input" class="col-12 col-form-label">Name Your Snippit</label>
                                     <div class="col-12">
@@ -114,13 +86,6 @@
                                         <option value="2" data-language="css">css</option>
                                         <option value="3" data-language="javascript">javascript</option>
                                     </select>
-                                
-                                    <!-- <button type="button" class="btn btn-sm btn-primary code-type-html">HTML</button>
-                                    <button type="button" class="btn btn-sm btn-success code-type-css">CSS</button>
-                                    <button type="button" class="btn btn-sm btn-warning code-type-javascript">Javascript</button> -->
-                                    <!-- <li class="active"></li>
-                                    <li></li>
-                                    <li></li> -->
                             </div>
 
                             <div class="code-container">
@@ -139,9 +104,6 @@
                 </div>
             </div> <!-- Modal end-->
 
-            <!-- <div class="scissors" style="width: 60rem;">
-                    <div id="scissors"></div>
-                </div> -->
         </div>
     </div> <!-- row end-->
 
@@ -151,58 +113,49 @@
     </div>
     </div>
 
-    <!-- scripts -->
-    <!-- <script type="text/javascript">
-        window.onload = () => {
-            // js syntax
-            function init(ok) {
-                return ok;
-            }
-        }
-    </script> -->
 
 
-        <!-- jquery -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <!-- Bootstrap Jquery / Popper / javascript -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-            crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-            crossorigin="anonymous"></script>
-        
-        <!-- font awesome -->
-        <script src="https://kit.fontawesome.com/5bb0abad9a.js"></script>
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Bootstrap Jquery / Popper / javascript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/5bb0abad9a.js"></script>
 
-        <!-- firebase app/database-->
-        <script src="https://www.gstatic.com/firebasejs/6.3.0/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/6.3.0/firebase-auth.js"></script>
-        <!--js-->
-        <script src="https://cdn.firebase.com/libs/firebaseui/4.1.0/firebaseui.js"></script>
+    <!-- firebase app/database-->
+    <script src="https://www.gstatic.com/firebasejs/6.3.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.0/firebase-auth.js"></script>
+    <!--js-->
+    <script src="https://cdn.firebase.com/libs/firebaseui/4.1.0/firebaseui.js"></script>
 
-        <!-- codemirror -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/codemirror.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/mode/javascript/javascript.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/mode/xml/xml.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/mode/css/css.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/mode/htmlmixed/htmlmixed.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/keymap/sublime.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/addon/edit/closebrackets.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/addon/fold/xml-fold.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/addon/edit/closetag.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/addon/comment/comment.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/addon/display/autorefresh.js"></script>
-       
-        <!-- moment.js -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <!-- codemirror -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/codemirror.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/mode/javascript/javascript.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/mode/xml/xml.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/mode/css/css.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/mode/htmlmixed/htmlmixed.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/keymap/sublime.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/addon/edit/closebrackets.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/addon/fold/xml-fold.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/addon/edit/closetag.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/addon/comment/comment.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/addon/display/autorefresh.js"></script>
+    
+    <!-- moment.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 
-        <!-- assets/javascript/app.js -->
-        <script src="assets/javascript/fireBaseApp.js" defer></script>
-        <script src="assets/javascript/auth.js" defer></script>
-        <script src="assets/javascript/codemirror.js"></script>
-        <script src="assets/javascript/app.js" defer></script>
+    <!-- assets/javascript/app.js -->
+    <script src="assets/javascript/fireBaseApp.js" defer></script>
+    <script src="assets/javascript/auth.js" defer></script>
+    <script src="assets/javascript/codemirror.js"></script>
+    <script src="assets/javascript/app.js" defer></script>
 
 
 </body>
