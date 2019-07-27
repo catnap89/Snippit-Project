@@ -42,14 +42,16 @@ $(document).ready(function() {
                 userID: userID, // using global variable userID from auth.js
                 name: name,
                 type: codeType,
-                })
+                }),
+                $('#main-modal-div').modal('hide');
             } else if (editKey !== '') { // If there is editKey value --- THIS WILL BE USED FOR UPDATING EXISTING DATA. IF WE LET USERS TO CHANGE, MODIFY, ETC PREVIOUSLY SAVED SNIPPIT
                 database.ref('snippits/' + editKey).update({ // Locate database with provided editKey value as it's unique key in 'snippits' path and update database
                 snippit: snippit,
                 userID: userID, // using global variable userID from auth.js
                 name: name,
                 type: codeType,
-                })
+                }),
+                $('#main-modal-div').modal('hide');
                 editKey = ''; // Empty the editKey value once else if conditional is met and database is updated
             } 
         }
@@ -72,8 +74,8 @@ $(document).ready(function() {
             mainContainer.prepend(`
             <div class="col-sm-12 col-md-6 mt-3 snippets ${editKey}">
                 <div class="card snippit" data-type=${snippit.type}>
-                    <div class="card-btn-header">
-                        <h5 class="card-header">${snippit.name}</h5>
+                    <div class="card-header">
+                        <h5 class="card-title">${snippit.name}</h5>
                         <button class='delete btn' data-editkey="${editKey}"><i class="fas fa-trash"></i></button>
                     </div>
                         
