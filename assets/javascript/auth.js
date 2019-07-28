@@ -29,13 +29,14 @@ $(document).ready(function () {
             $("#firebaseui-auth-container").hide();
             $("#main-logout-btn").show();
             $("#main-add-btn").show();
-            $("#intro").hide()
+            $("#intro").hide();
         }else{
             userID = null;
             $("#main-logout-btn").hide();
             $("#main-add-btn").hide();
             $(".snippets").remove(); 
             $("#firebaseui-auth-container").show();
+            $("#intro").show();
         }
     })
 
