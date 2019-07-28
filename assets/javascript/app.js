@@ -83,7 +83,7 @@ $(document).ready(function() {
     firebase.database().ref("/snippits").on("child_added", function(data) {
         // get the current snippits info
         data.val();
-        let snippitContainer = $(".snippit-container"); 
+        let snippitContainer = $("#snippit-container"); 
         let snippit = data.val();
         var editKey = data.key;
         // data.forEach(function(childSnapshot) {

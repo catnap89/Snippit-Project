@@ -30,7 +30,6 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
                     <button class="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false"
@@ -48,7 +47,7 @@
                             <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="main-logout-btn"> Log
                                 Out </button>
                         </form>
-                        
+
                     </div>
                 </nav>
 
@@ -56,26 +55,28 @@
         </div> <!-- row end -->
 
         <div class="row main-content-container justify-content-center">
-            <div class="card border-primary mb-3 col-sm-10 col-md-6 justify-self-center"  id="intro">
+            <!-- primary display card -->
+            <div class="card border-primary mb-3 col-sm-10 col-md-6 justify-self-center" id="intro">
                 <div class="card-header bg-transparent border-primary"><strong>Welcome to Snippit!</strong></div>
                 <div class="card-body text-primary">
                     <h5 class="card-title">Snip.</h5>
-                    <p class="card-text">As a new user you will be able to create and save your code! Once you are signed into your account 
-                        using your github login, you will have your page set up and ready to go. 
-                    <br>
-                    <br>
-                        In your page, you have access to any snippit that you save for any future project. Your code will be accessible at any time for 
+                    <p class="card-text">As a new user you will be able to create and save your code! Once you are
+                        signed into your account
+                        using your github login, you will have your page set up and ready to go.
+                        <br>
+                        <br>
+                        In your page, you have access to any snippit that you save for any future project. Your code
+                        will be accessible at any time for
                         faster access. As a developer, we love to have a more convinient way of coding, so get snipping!
-
                     </p>
                 </div>
-                <div class="card-footer bg-transparent border-primary" style= "text-align: center;">
+                <div class="card-footer bg-transparent border-primary" style="text-align: center;">
                     <p>Let's Get Started!</p>
                     <div id="firebaseui-auth-container"></div>
                 </div>
             </div>
 
-            <div class="col-md-2 vertical-navbar">
+            <div class="col-md-2 vertical-navbar d-none d-small-none d-md-block">
                 <form class="form-inline my-2 my-lg-0">
                     <!-- Button trigger modal-->
                     <button type="button" class="btn btn-outline-primary my-2 my-sm-0" data-toggle="modal"
@@ -96,104 +97,9 @@
                     </li> -->
                 </ul>
             </div>
-
-            <div class="col-md-10 snippit-container">
+            <div class="col-sm-12 col-md-10 row" id="snippit-container">
 
             </div>
-
-            <!-- MAIN MODAL -->
-            <div class="modal" tabindex="-1" role="dialog" id="main-modal-div">
-                <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
-                    <div class="modal-content">
-
-                        <div class="modal-header">
-
-                            <form>
-                                <div class="form-group row font-weight-bold mt-3 ml-3 mr-3" id="nameSnip">
-                                    <label for="name-input" class="col-12 col-form-label">Name Your Snippit</label>
-                                    <div class="col-12">
-                                        <input class="form-control" type="name" id="snippitName">
-                                    </div> <br>
-                                </div>
-                            </form>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Cancel">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-
-                        <div class="modal-body">
-                            <div class="btn-group code-type-nav">
-                                <div class="action-buttons"></div>
-                                <select id="langOption" name="language" class="language fill">
-                                    <option value="1" data-language="htmlmixed">html</option>
-                                    <option value="2" data-language="css">css</option>
-                                    <option value="3" data-language="javascript">javascript</option>
-                                </select>
-                            </div> 
-
-                            <div class="code-container">
-                                <!-- CODEMIRROR -->
-                                <textarea id="codemirror"></textarea>
-                            </div>
-
-                        </div>
-                        <div class="modal-footer">
-                            <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal" id="model-cancel-btn">Cancel</button> -->
-                            <button type="button" class="btn btn-primary" id="modal-save-btn">Save Snippit</button>
-                            <form action="https://codepen.io/pen/define" method="POST" target="_blank" id="modal-test-form">
-                                <input type="hidden" name="data" id="modal-test-code">
-                                <button type="button" class="btn btn-secondary" id="modal-test-btn">Test Snippit</button>
-                              </form>
-                            
-                        </div>
-
-                    </div>
-                </div>
-            </div> <!-- Modal end-->
-
-            <!-- SIDE NAV MODAL -->
-            <div class="modal" tabindex="-1" role="dialog" id="fav-modal-div">
-                <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
-                    <div class="modal-content">
-
-                        <div class="modal-header">
-
-                            <form>
-                                <div class="form-group row font-weight-bold mt-3 ml-3 mr-3" id="nameFav">
-                                    <label for="name-input" class="col-12 col-form-label">Name Your Favorites</label>
-                                    <div class="col-12">
-                                        <input class="form-control" type="name" id="favoriteName">
-                                    </div> <br>
-                                </div>
-                            </form>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Cancel">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-
-                        <div class="modal-body">
-                            <div class="dropdown">
-                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Dropdown button
-                                </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <!-- Added favorite appears here -->
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <a class="dropdown-item" href="#">Something else here</a>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="modal-footer">
-                            <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal" id="model-cancel-btn">Cancel</button> -->
-                            <button type="button" class="btn btn-primary" id="fav-save-btn">Save Favorites</button>
-                        </div>
-
-                    </div>
-                </div>
-            </div> <!-- Modal end-->
-
         </div>
     </div> <!-- row end-->
 
@@ -201,8 +107,93 @@
     <div class="scissors">
         <div id="scissors"></div>
     </div>
-    </div>
 
+    <!-- SIDE NAV MODAL -->
+    <div class="modal" tabindex="-1" role="dialog" id="fav-modal-div">
+        <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <form>
+                        <div class="form-group row font-weight-bold mt-3 ml-3 mr-3" id="nameFav">
+                            <label for="name-input" class="col-12 col-form-label">Name Your Favorites</label>
+                            <div class="col-12">
+                                <input class="form-control" type="name" id="favoriteName">
+                            </div> <br>
+                        </div>
+                    </form>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Cancel">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Dropdown button
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <!-- Added favorite appears here -->
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal" id="model-cancel-btn">Cancel</button> -->
+                    <button type="button" class="btn btn-primary" id="fav-save-btn">Save Favorites</button>
+                </div>
+            </div>
+        </div>
+    </div> <!-- Modal end-->
+
+    <!-- MAIN MODAL -->
+    <div class="modal" tabindex="-1" role="dialog" id="main-modal-div">
+        <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <form>
+                        <div class="form-group row font-weight-bold mt-3 ml-3 mr-3" id="nameSnip">
+                            <label for="name-input" class="col-12 col-form-label">Name Your Snippit</label>
+                            <div class="col-12">
+                                <input class="form-control" type="name" id="snippitName">
+                            </div> <br>
+                        </div>
+                    </form>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Cancel">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="btn-group code-type-nav">
+                        <div class="action-buttons"></div>
+                        <select id="langOption" name="language" class="language fill">
+                            <option value="1" data-language="htmlmixed">html</option>
+                            <option value="2" data-language="css">css</option>
+                            <option value="3" data-language="javascript">javascript</option>
+                        </select>
+                    </div>
+
+                    <div class="code-container">
+                        <!-- CODEMIRROR -->
+                        <textarea id="codemirror"></textarea>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal" id="model-cancel-btn">Cancel</button> -->
+                    <button type="button" class="btn btn-primary" id="modal-save-btn">Save Snippit</button>
+                    <form action="https://codepen.io/pen/define" method="POST" target="_blank" id="modal-test-form">
+                        <input type="hidden" name="data" id="modal-test-code">
+                        <button type="button" class="btn btn-secondary" id="modal-test-btn">Test
+                            Snippit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div> <!-- Modal end-->
 
 
     <!-- jquery -->
