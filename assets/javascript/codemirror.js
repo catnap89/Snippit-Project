@@ -1,21 +1,11 @@
 // this will be used for codemirror
 
-// codemirror
-
-// var code = $('.code-editor-textarea')[0];
-// Declaring editor variable and settings (lineNubers, lineWrapping..etc) to pass from CodeMirror.fromTextArea function code variable.
-// var editor = CodeMirror.fromTextArea(code, {
-//     lineNumbers: true,
-//     lineWrapping : true,
-//     cursorBlinkRate: 0,
-    
-// })
 
 var language = $('#langOption').find(":selected").attr("data-language");
 
 var editor = CodeMirror.fromTextArea(document.getElementById("codemirror"), {
 	lineNumbers: true,			// gives a lineNumber gutter
-	mode: 'language',			// sets syntax mode
+	mode: 'htmlmixed',			// sets syntax mode
 	theme: 'mdn-like',			// select theme
 	
 	indentUnit: 4,				// default is 2
@@ -58,6 +48,177 @@ $('select').on('change', function() {
   
 
 console.log(editor.mode);
+
+$('#main-add-btn').on('click', function(JSONstring) {
+  $(".codepen-button").empty();
+  // <button type="button" class="btn btn-secondary" id="modal-test-btn">Test Snippit</button>
+
+  var form = 
+        '<form action="https://codepen.io/pen/define" method="POST" target="_blank">' + 
+            '<input type="hidden" name="data" value=\'' + 
+            JSONstring + 
+            '\'>' + 
+            '<button type="submit" class="btn btn-secondary" id="modal-test-btn">Test Snippit</button>' +
+        '</form>';
+  console.log("form sending to codepen:" + form);
+
+  $( ".codepen-button" ).append(form);
+
+  $(".codepen-container").val('');
+
+  $('#modal-test-btn').on('click', testSnippit); //testSnippit);
+
+
+})
+
+function testSnippit () {
+
+  // grab input value
+  var snippit = editor.getValue("\n"); // grab value of the codemirror textarea 
+  console.log(snippit);
+  dataType = $('#langOption').find(":selected").value();
+  var wrapSnippit = '<pre class="codepen-able" data-type="' + dataType + '"'+'>' + '<code>' + snippit + '</code>'+ '</pre>';
+  $(".codepen-container").html(wrapSnippit);
+  console.log("data-type: " + language);
+
+  $(".codepen-able").each(function() {
+
+        var el = $(this),
+            type = el.data("type"),
+            codeInside = el.find("code"),
+            isCodeInside = codeInside.length,
+            HTML = "",
+            CSS = "",
+            JS = "";
+        console.log(el);
+        
+        if (type == "html") {
+        if (codeInside) {
+            HTML = codeInside.html();
+        } else {
+            HTML = el.html();
+        }
+        } else if (type == "css") {
+        if (codeInside) {
+            CSS = codeInside.html();
+        } else {
+            CSS = el.html();
+        }
+        } else if (type == "js") {
+        if (codeInside) {
+            JS = codeInside.html();
+        } else {
+            JS = el.html();
+        }
+        }
+
+        var data = {
+        title              : "Cool Pen",
+        description        : "",
+        html               : HTML,
+        html_pre_processor : "none",
+        css                : CSS,
+        css_pre_processor  : "none",
+        css_starter        : "neither",
+        css_prefix_free    : false,
+        js                 : JS,
+        js_pre_processor   : "none",
+        js_modernizr       : false,
+        js_library         : "",
+        html_classes       : "",
+        css_external       : "",
+        js_external        : "",
+        template           : true
+        };
+
+        var JSONstring = 
+        JSON.stringify(data)
+        // Quotes will screw up the JSON
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&apos;");
+
+        // var form = 
+        // '<form action="https://codepen.io/pen/define" method="POST" target="_blank">' + 
+        //     '<input type="hidden" name="data" value=\'' + 
+        //     JSONstring + 
+        //     '\'>' + 
+        //     '<input type="image" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-1/cp-arrow-right.svg" width="40" height="40" value="Create New Pen with Prefilled Data" class="codepen-mover-button">' +
+        // '</form>';
+
+        // // modalFooter.append(form);
+        // codepenBtnContainer.append(form);
+
+      });
+
+    
+
+ 
+
+}
+
+
+// $(function() {
+//       $(".codepen-able").each(function() {
+
+//         var el = $(this),
+//             type = el.data("type"),
+//             codeInside = el.find("code"),
+//             isCodeInside = codeInside.length,
+//             HTML = "",
+//             CSS = "",
+//             JS = "";
+//         console.log(el);
+//         var codepenBtnContainer = $(".codepen-button");
+        
+//         if (type == "html") {
+//         if (codeInside) {
+//             HTML = codeInside.html();
+//         } else {
+//             HTML = el.html();
+//         }
+//         } else if (type == "css") {
+//         if (codeInside) {
+//             CSS = codeInside.html();
+//         } else {
+//             CSS = el.html();
+//         }
+//         } else if (type == "js") {
+//         if (codeInside) {
+//             JS = codeInside.html();
+//         } else {
+//             JS = el.html();
+//         }
+//         }
+
+//         var data = {
+//         title              : "Cool Pen",
+//         description        : "",
+//         html               : HTML,
+//         html_pre_processor : "none",
+//         css                : CSS,
+//         css_pre_processor  : "none",
+//         css_starter        : "neither",
+//         css_prefix_free    : false,
+//         js                 : JS,
+//         js_pre_processor   : "none",
+//         js_modernizr       : false,
+//         js_library         : "",
+//         html_classes       : "",
+//         css_external       : "",
+//         js_external        : "",
+//         template           : true
+//         };
+
+//         var JSONstring = 
+//         JSON.stringify(data)
+//         // Quotes will screw up the JSON
+//         .replace(/"/g, "&quot;")
+//         .replace(/'/g, "&apos;");
+//  });
+
+
+
+
 
 /**
  *
