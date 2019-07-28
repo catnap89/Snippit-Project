@@ -23,24 +23,29 @@ $(document).ready(function() {
         let type = $('#langOption').find(":selected").attr("data-language");
         let data = {}
         let code = editor.getValue("\n");
+        var snippitTitle = $("#snippitName").val();
         console.log(type)
-        if(type === 'htmlmixed'){
-            data = {
-                html: code,
+        if (code != '' && snippitTitle != '') {
+
+            if(type === 'htmlmixed'){
+                data = {
+                    html: code,
+                }
+            }else if(type ==='css'){
+                data = {
+                    css: code,
+                }
+            }else if(type === 'javascript'){
+                data = {
+                    js: code
+                }
             }
-        }else if(type ==='css'){
-            data = {
-                css: code,
-            }
-        }else if(type === 'javascript'){
-            data = {
-                js: code
-            }
+            data.title = $('#snippitName').val().trim();
+            console.log(data)
+            $("#modal-test-code").val(JSON.stringify(data));
+            $("#modal-test-form").submit();
+
         }
-        data.title = $('#snippitName').val().trim();
-        console.log(data)
-        $("#modal-test-code").val(JSON.stringify(data));
-        $("#modal-test-form").submit();
 
     });
 
@@ -51,9 +56,10 @@ $(document).ready(function() {
         var snippit = editor.getValue("\n"); // grab value of the codemirror textarea 
         var name = $('#snippitName').val().trim();
         var codeType = $('#langOption').find(":selected").attr("data-language");
+        var snippitTitle = $("#snippitName").val();
 
         // Using conditional statement to prevent data to be pushed to the database when there is no codes writeen in the textaera.
-        if (snippit != '') {
+        if (snippit != '' && snippitTitle != '') {
             // Clear CodeMirror input field (Not sure if this is needed since we haven't used codemirror yet. When new modal is opened, is the input field going to be cleared automatically?)
             editor.setValue("");
             $("#snippitName").val('');
