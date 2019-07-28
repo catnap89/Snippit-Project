@@ -19,6 +19,10 @@ body{
   box-shadow: 0 0 10px #1403f7;
   border: 1px solid rgb(97, 214, 250);
   width: 205px;
+}
+
+.fav-add-btn {
+  box-shadow: 0 0 10px #1403f7;
   
 
 }
@@ -58,6 +62,7 @@ body{
     padding: 12px;
     text-decoration: none;
     box-shadow: 0 0 5px #1607f3; 
+    margin-right: 10px;
 }
 
 #intro {
@@ -96,6 +101,7 @@ body{
     padding: 12px;
     text-decoration: none;
     box-shadow: 0 0 5px #1607f3; 
+    margin-right: 20px;
 }
 
 #scissors {
