@@ -46,7 +46,6 @@ $(document).ready(function() {
     function saveSnippit() {
         // Declare variables
         var editKey = ''; // variable to store reference key to firebase for editing correspond data
-        var textarea = $('.Codemirror-Code');
         var snippit = editor.getValue("\n"); // grab value of the codemirror textarea 
         var name = $('#snippitName').val().trim();
         var codeType = $('#langOption').find(":selected").attr("data-language");
@@ -83,14 +82,14 @@ $(document).ready(function() {
     firebase.database().ref("/snippits").on("child_added", function(data) {
         // get the current snippits info
         data.val();
-        let mainContainer = $(".main-content-container"); 
+        let snippitContainer = $(".snippit-container"); 
         let snippit = data.val();
         var editKey = data.key;
         // data.forEach(function(childSnapshot) {
         //     var editKey = childSnapshot.key;
         // })
         if(userID !== null && snippit.userID === userID){
-            mainContainer.prepend(`
+            snippitContainer.prepend(`
             <div class="col-sm-12 col-md-6 mt-3 snippets ${editKey}">
                 <div class="card snippit" data-type=${snippit.type}>
                     <div class="card-header nav">
@@ -113,14 +112,14 @@ $(document).ready(function() {
     database.ref("/snippits").on('child_changed', function(data) {
         // get the current snippits info
         data.val();
-        let mainContainer = $(".main-content-container"); 
+        let snippitContainer = $(".snippit-container"); 
         let snippit = data.val();
         var editKey = data.key;
         // data.forEach(function(childSnapshot) {
         //     var editKey = childSnapshot.key;
         // })
         if(userID !== null && snippit.userID === userID){
-            mainContainer.html(`
+            snippitContainer.html(`
             <div class="col-sm-12 col-md-6 mt-3 snippets ${editKey}">
                 <div class="card snippit" data-type=${snippit.type}>
                     <div class="card-btn-header">

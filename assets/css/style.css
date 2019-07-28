@@ -23,13 +23,14 @@ body{
 
 }
 
-.vertical-menu {
-    margin-right: 10px;
-    width: 200px;
+.vertical-navbar {
+    /* margin-right: 10px; */
+    /* width: 200px; */
+    margin-top: 16px;
 }
 
 .vertical-menu a {
-  background-color:  white;
+  background-color: white;
   color: black;
   text-shadow: 0 0 5px #fff, 0 0 20px #fff, 0 0 20px #1607f3, 0 0 30px #1607f3, 0 0 40px #1607f3, 0 0 55px #1607f3, 0 0 75px #1607f3;
   display: block;
