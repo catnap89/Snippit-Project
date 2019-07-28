@@ -14,7 +14,6 @@
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/4.1.0/firebaseui.css">
     <!-- codemirror css cdn-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/codemirror.css">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/theme/material.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/theme/mdn-like.css">
     <!-- assets/css/style.css -->
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
@@ -55,6 +54,13 @@
         </div> <!-- row end -->
         
         <div class="row main-content-container">
+            <div>
+                <form action="https://codepen.io/pen/define" method="POST" target="_blank">
+                    <input type="hidden" name="data" value='{"title": "New Pen!", "html": "<div>Hello, World!</div>"}'>
+
+                    <input type="submit" value="Create New Pen with Prefilled Data">
+                </form>
+            </div>
 
             <br>
 
@@ -93,11 +99,22 @@
                                 <textarea id="codemirror"></textarea>
                             </div>
 
+                            <div class="codepen-container"></div>
+
                         </div>
                         <div class="modal-footer">
                             <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal" id="model-cancel-btn">Cancel</button> -->
                             <button type="button" class="btn btn-primary" id="modal-save-btn">Save Snippit</button>
-                            <button type="button" class="btn btn-secondary" id="modal-test-btn">Test Snippit</button>
+        
+                            <div class="codepen-button">
+                                <form action="https://codepen.io/pen/define" method="POST" target="_blank">
+                                <input id="codepen-data" type="hidden" name="data" value='{"title": "New Pen!", "html": "<div>Hello, World!</div>"}'>
+
+                                <input id="codepen-submit" type="submit" value="Create New Pen with Prefilled Data">
+                            </form>
+
+                            </div>
+                            
                         </div>
 
                     </div>
@@ -150,6 +167,9 @@
     
     <!-- moment.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+
+    <!-- codepen -->
+    <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
     <!-- assets/javascript/app.js -->
     <script src="assets/javascript/fireBaseApp.js" defer></script>
