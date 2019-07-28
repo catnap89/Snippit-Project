@@ -32,7 +32,7 @@ $(document).ready(function() {
             }
         }else if(type === 'javascript'){
             data = {
-                javascript: code
+                js: code
             }
         }
         data.title = $('#snippitName').val().trim();
