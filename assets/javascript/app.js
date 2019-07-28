@@ -8,27 +8,26 @@ $(document).ready(function() {
     // on click #main-add-btn, display modal
     $('#main-add-btn').on('shown.bs.modal', function () {
         $('#main-modal-div').trigger('focus')
+       
     })
+    
 
     // Make Dropdown to choose the favorite folder to save the snippit
 
     // On click Save Snippit button (#modal-save-btn), push the snippit into firebase database and dynamically generate card with the code snippit.
     $('#modal-save-btn').on('click', saveSnippit);
 
-    // On click Test Snippit button (#model-test-btn), which pulls up test in code mirror for use.
-    $('#modal-test-btn').on('click') //testSnippit);
-
 
     // saveSnippit function
     function saveSnippit() {
         // Declare variables
         var editKey = ''; // variable to store reference key to firebase for editing correspond data
-        var textarea = $('.Codemirror-Code');
+        // var textarea = $('.Codemirror-Code');
         var snippit = editor.getValue("\n"); // grab value of the codemirror textarea 
-        console.log("Snippit: " + snippit);
+        // console.log("Snippit: " + snippit);
         var name = $('#snippitName').val().trim();
         var codeType = $('#langOption').find(":selected").attr("data-language");
-        console.log("codetype: " + codeType);
+        // console.log("codetype: " + codeType);
 
         // Using conditional statement to prevent data to be pushed to the database when there is no codes writeen in the textaera.
         if (snippit != '') {
@@ -66,10 +65,7 @@ $(document).ready(function() {
         let snippit = data.val();
         var editKey = data.key;
         console.log("editkey: " + editKey);
-        // data.forEach(function(childSnapshot) {
-        //     var editKey = childSnapshot.key;
-        //     console.log("editKey: " + editKey);
-        // })
+
         if(userID !== null && snippit.userID === userID){
             mainContainer.prepend(`
             <div class="col-sm-12 col-md-6 mt-3 snippets ${editKey}">
@@ -98,10 +94,7 @@ $(document).ready(function() {
         let snippit = data.val();
         var editKey = data.key;
         console.log("editkey: " + editKey);
-        // data.forEach(function(childSnapshot) {
-        //     var editKey = childSnapshot.key;
-        //     console.log("editKey: " + editKey);
-        // })
+
         if(userID !== null && snippit.userID === userID){
             mainContainer.html(`
             <div class="col-sm-12 col-md-6 mt-3 snippets ${editKey}">
@@ -132,9 +125,7 @@ $(document).ready(function() {
 
     })
 
-    function testSnippit () {
-        //Pull up testing code from Code Mirror for current used Snippit
+    
 
-    }
 })
 
