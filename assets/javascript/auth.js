@@ -27,11 +27,13 @@ $(document).ready(function () {
         if(user){
             userID = user.uid;
             $("#firebaseui-auth-container").hide();
-            $("#main-logout-btn").show()
+            $("#main-logout-btn").show();
+            $("#main-add-btn").show();
         }else{
             userID = null;
             $("#firebaseui-auth-container").show();
             $("#main-logout-btn").hide();
+            $("#main-add-btn").hide();
             $(".snippets").remove(); 
             ui.start('#firebaseui-auth-container', uiConfig);
         }
