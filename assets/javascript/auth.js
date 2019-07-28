@@ -20,7 +20,7 @@ $(document).ready(function () {
     // Initialize the FirebaseUI Widget using Firebase.
     var ui = new firebaseui.auth.AuthUI(firebase.auth());
     // The start method will wait until the DOM is loaded.
-
+    ui.start('#firebaseui-auth-container', uiConfig);
     
 
     firebase.auth().onAuthStateChanged(function (user) {
@@ -31,11 +31,10 @@ $(document).ready(function () {
             $("#main-add-btn").show();
         }else{
             userID = null;
-            $("#firebaseui-auth-container").show();
             $("#main-logout-btn").hide();
             $("#main-add-btn").hide();
             $(".snippets").remove(); 
-            ui.start('#firebaseui-auth-container', uiConfig);
+            $("#firebaseui-auth-container").show();
         }
     })
 
