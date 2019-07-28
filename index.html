@@ -29,33 +29,25 @@
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+            aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <a class="navbar-brand mr-auto" href="#"><strong>Snippit <i class="fas fa-cut"></i></strong></a>
+            <form class="form-inline my-2 my-lg-0">
+                <!-- Button trigger modal-->
+                <button type="button" class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal"
+                    data-target="#main-modal-div" id="main-add-btn">Create Snippit </button>
+            </form>
+            <form class="form-inline my-2 my-lg-0">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="main-logout-btn"> Log
+                    Out </button>
+            </form>
+        </div>
+    </nav>
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-                <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse"
-                        data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false"
-                        aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                        <a class="navbar-brand mr-auto" href="#"><strong>Snippit  <i class="fas fa-cut"></i></strong></a>
-                        <form class="form-inline my-2 my-lg-0">
-                            <!-- Button trigger modal-->
-                            <button type="button" class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal"
-                                data-target="#main-modal-div" id="main-add-btn">Create Snippit </button>
-                        </form>
-                        <form class="form-inline my-2 my-lg-0"> 
-                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="main-logout-btn"> Log
-                                Out </button>
-                        </form>
-
-                    </div>
-                </nav>
-
-            </div>
-        </div> <!-- row end -->
-
         <div class="row main-content-container justify-content-center">
             <!-- primary display card -->
             <div class="card border-primary mb-3 col-sm-10 col-md-6 justify-self-center" id="intro">
