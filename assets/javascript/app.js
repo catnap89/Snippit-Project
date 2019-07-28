@@ -55,6 +55,7 @@ $(document).ready(function() {
         if (snippit != '') {
             // Clear CodeMirror input field (Not sure if this is needed since we haven't used codemirror yet. When new modal is opened, is the input field going to be cleared automatically?)
             editor.setValue("");
+            $("#snippitName").val('');
 
             // Push to firebase
             if (editKey == '') { // If there is no editKey value
