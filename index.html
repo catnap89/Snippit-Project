@@ -53,10 +53,25 @@
 
             </div>
         </div> <!-- row end -->
-        
+
         <div class="row main-content-container">
 
             <br>
+            <div class="card border-primary mb-3" style="max-width: 65rem;" id= "intro">
+                <div class="card-header bg-transparent border-primary"><strong>Welcome to Snippit!</strong></div>
+                <div class="card-body text-primary">
+                  <h5 class="card-title">Snip.</h5>
+                  <p class="card-text">As a new user you will be able to create and save your code! Once you are signed into your account 
+                      using your github login, you will have your page set up and ready to go. 
+                    <br>
+                    <br>
+                      In your page, you have access to any snippit that you save for any future project. Your code will be accessible at any time for 
+                      faster access. As a developer, we love to have a more convinient way of coding, so get snipping!
+
+                  </p>
+                </div>
+                <div class="card-footer bg-transparent border-primary" style= "text-align: center;"> Let's Get Started!</div>
+              </div>
 
             <!-- MODAL -->
             <div class="modal" tabindex="-1" role="dialog" id="main-modal-div">
@@ -64,7 +79,7 @@
                     <div class="modal-content">
 
                         <div class="modal-header">
-        
+
                             <form>
                                 <div class="form-group row font-weight-bold mt-3 ml-3 mr-3">
                                     <label for="name-input" class="col-12 col-form-label">Name Your Snippit</label>
@@ -81,11 +96,11 @@
                         <div class="modal-body">
                             <div class="btn-group code-type-nav">
                                 <div class="action-buttons"></div>
-                                    <select id="langOption" name="language" class="language fill">
-                                        <option value="1" data-language="htmlmixed">html</option>
-                                        <option value="2" data-language="css">css</option>
-                                        <option value="3" data-language="javascript">javascript</option>
-                                    </select>
+                                <select id="langOption" name="language" class="language fill">
+                                    <option value="1" data-language="htmlmixed">html</option>
+                                    <option value="2" data-language="css">css</option>
+                                    <option value="3" data-language="javascript">javascript</option>
+                                </select>
                             </div>
 
                             <div class="code-container">
@@ -128,7 +143,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-    
+
     <!-- font awesome -->
     <script src="https://kit.fontawesome.com/5bb0abad9a.js"></script>
 
@@ -151,7 +166,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/addon/edit/closetag.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/addon/comment/comment.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/addon/display/autorefresh.js"></script>
-    
+
     <!-- moment.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 
