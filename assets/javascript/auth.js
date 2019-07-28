@@ -30,7 +30,7 @@ $(document).ready(function () {
             $("#main-logout-btn").show();
             $("#main-add-btn").show();
             $("#intro").hide();
-            $(".vertical-navbar").addClass("d-md-block");;
+            $(".vertical-navbar").addClass("d-md-block");
         }else{
             userID = null;
             $("#main-logout-btn").hide();
@@ -40,10 +40,12 @@ $(document).ready(function () {
             $("#intro").show();
             $(".vertical-navbar").removeClass("d-md-block");
         }
-    })
+    });
 
     $("#main-logout-btn").on("click", (e) => {
         e.preventDefault();
         firebase.auth().signOut();
       });
 })
+
+

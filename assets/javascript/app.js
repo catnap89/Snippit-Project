@@ -91,7 +91,7 @@ $(document).ready(function() {
         // })
         if(userID !== null && snippit.userID === userID){
             snippitContainer.prepend(`
-            <div class="col-sm-12 col-md-6 mt-3 snippets ${editKey}">
+            <div class="col-sm-12 col-md-6 mt-3 snippets ${editKey}" data-key="${editKey}">
                 <div class="card snippit" data-type=${snippit.type}>
                     <div class="card-header nav">
                         <h5 class="card-title d-inline-block mr-auto">${snippit.name}</h5>
@@ -100,46 +100,45 @@ $(document).ready(function() {
                         
                     <div class="card-body">
                         <p class="card-text">
-                            <textarea disabled class="code-text">${snippit.snippit}</textarea>
+                            <textarea disabled class="code-text codemirror-cursor">${snippit.snippit}</textarea>
                         </p>
                     </div>
                 </div>
             </div>
             `);
         }
+        highlightSnippets(editKey);
     });
 
     // when data changes (deleted), this will update the cards, without the on child_changed function, cards gets removed upon clicking removed button but was displayed again
-    database.ref("/snippits").on('child_changed', function(data) {
-        // get the current snippits info
-        data.val();
-        let snippitContainer = $(".snippit-container"); 
-        let snippit = data.val();
-        var editKey = data.key;
-        // data.forEach(function(childSnapshot) {
-        //     var editKey = childSnapshot.key;
-        // })
-        if(userID !== null && snippit.userID === userID){
-            snippitContainer.html(`
-            <div class="col-sm-12 col-md-6 mt-3 snippets ${editKey}">
-                <div class="card snippit" data-type=${snippit.type}>
-                    <div class="card-btn-header">
-                        <h5 class="card-header">${snippit.name}</h5>
-                        <button class='delete btn' data-editkey="${editKey}"><i class="fas fa-trash"></i></button>
-                    </div>
-                    <div class="card-body">
-                        <p class="card-text">
-                            <textarea disabled class="code-text">${snippit.snippit}</textarea>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            `);
+    // database.ref("/snippits").on('child_changed', function(data) {
+    //     // get the current snippits info
+    //     data.val();
+    //     let snippitContainer = $(".snippit-container"); 
+    //     let snippit = data.val();
+    //     var editKey = data.key;
+    //     // data.forEach(function(childSnapshot) {
+    //     //     var editKey = childSnapshot.key;
+    //     // })
+    //     if(userID !== null && snippit.userID === userID){
+    //         snippitContainer.html(`
+    //         <div class="col-sm-12 col-md-6 mt-3 snippets ${editKey}">
+    //             <div class="card snippit" data-type=${snippit.type}>
+    //                 <div class="card-btn-header">
+    //                     <h5 class="card-header">${snippit.name}</h5>
+    //                     <button class='delete btn' data-editkey="${editKey}"><i class="fas fa-trash"></i></button>
+    //                 </div>
+    //                 <div class="card-body">
+    //                     <p class="card-text">
+    //                         <textarea disabled class="code-text">${snippit.snippit}</textarea>
+    //                     </p>
+    //                 </div>
+    //             </div>
+    //         </div>
+    //         `);
+    //     }
 
-            
-        }
-
-    });
+    // });
 
     // Remove Snippit card and the data from the database
     $(document).on('click', '.delete', function() {
@@ -194,9 +193,16 @@ $(document).ready(function() {
             `);
         }
     });
-
-
-
-  
 })
 
+function highlightSnippets(key){
+    let snippit = $(`.snippets[data-key="${key}"]`);
+    if(snippit.length > 0){
+        let type = snippit.find(".snippit").attr("data-type");
+        CodeMirror.fromTextArea(snippit.find(".code-text")[0], {
+            mode: type,			// sets syntax mode
+            theme: 'cobalt',
+            readOnly: true,
+        })
+    }
+}
