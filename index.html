@@ -29,24 +29,31 @@
 </head>
 
 <body>
+
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand mr-auto" href="#"><strong>Snippit <i class="fas fa-cut"></i></strong></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
             aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-            <a class="navbar-brand mr-auto" href="#"><strong>Snippit <i class="fas fa-cut"></i></strong></a>
-            <form class="form-inline my-2 my-lg-0">
-                <!-- Button trigger modal-->
-                <button type="button" class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal"
-                    data-target="#main-modal-div" id="main-add-btn">Create Snippit </button>
-            </form>
-            <form class="form-inline my-2 my-lg-0">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="main-logout-btn"> Log
-                    Out </button>
-            </form>
+            <ul class="navbar-nav ml-auto mt-2 mt-lg-0"> <!-- Changing mr-auto to ml-auto positioned nav links to the right side-->
+              <li class="nav-item">
+                 <form class="form-inline my-2 my-lg-0">
+                    <!-- Button trigger modal-->
+                    <button type="button" class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal"
+                        data-target="#main-modal-div" id="main-add-btn">Create Snippit </button>
+                </form>
+              </li>
+              <li>
+                <form class="form-inline my-2 my-lg-0">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="main-logout-btn"> Log
+                        Out </button>
+                </form>
+              </li> 
         </div>
     </nav>
+    
     <div class="container-fluid">
         <div class="row main-content-container justify-content-center">
             <!-- primary display card -->
