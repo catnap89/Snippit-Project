@@ -31,6 +31,7 @@ $(document).ready(function () {
             $("#main-add-btn").show();
             $("#intro").hide();
             $(".vertical-navbar").addClass("d-md-block");
+            $("#float-btn").show();
         }else{
             userID = null;
             $("#main-logout-btn").hide();
@@ -39,6 +40,7 @@ $(document).ready(function () {
             $("#firebaseui-auth-container").show();
             $("#intro").show();
             $(".vertical-navbar").removeClass("d-md-block");
+            $("#float-btn").hide();
         }
     });
 
