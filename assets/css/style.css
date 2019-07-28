@@ -70,6 +70,22 @@ body{
 }
 
 
+#langOption {
+  box-shadow: 0 0 5px #68c2f7;
+  border: 1px solid rgb(97, 214, 250);
+  margin-bottom: 10px;
+}
+
+#nameSnip {
+  box-shadow: 0 0 5px #68c2f7;
+  border: 1px solid rgb(97, 214, 250); 
+}
+
+#snippitName {
+  margin-bottom: 10px;
+}
+
+
 #main-add-btn{
     box-shadow: 0 0 5px #1607f3;
     background-color:  white;
