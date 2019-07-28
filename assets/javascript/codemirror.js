@@ -15,7 +15,7 @@ var language = $('#langOption').find(":selected").attr("data-language");
 
 var editor = CodeMirror.fromTextArea(document.getElementById("codemirror"), {
 	lineNumbers: true,			// gives a lineNumber gutter
-	mode: 'language',			// sets syntax mode
+	mode: 'htmlmixed',			// sets syntax mode
 	theme: 'mdn-like',			// select theme
 	
 	indentUnit: 4,				// default is 2
