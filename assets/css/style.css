@@ -18,7 +18,8 @@ body{
 .code-text {
   box-shadow: 0 0 10px #1403f7;
   border: 1px solid rgb(97, 214, 250);
-  width: 205px;
+  width: 100%;
+  height: 250px;
 }
 
 .fav-add-btn {
@@ -141,5 +142,4 @@ body{
     border-top: 3px dashed black;
     margin-top: -3px;
 }
-
 
