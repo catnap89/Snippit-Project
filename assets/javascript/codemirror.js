@@ -11,6 +11,7 @@
     
 // })
 
+
 var language = $('#langOption').find(":selected").attr("data-language");
 
 var editor = CodeMirror.fromTextArea(document.getElementById("codemirror"), {
