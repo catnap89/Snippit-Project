@@ -16,8 +16,31 @@ $(document).ready(function() {
     $('#modal-save-btn').on('click', saveSnippit);
 
     // On click Test Snippit button (#model-test-btn), which pulls up test in code mirror for use.
-    $('#modal-test-btn').on('click') //testSnippit);
+    $('#modal-test-btn').on('click', function(e){
+        e.preventDefault();
+        let type = $('#langOption').find(":selected").attr("data-language");
+        let data = {}
+        let code = editor.getValue("\n");
+        console.log(type)
+        if(type === 'htmlmixed'){
+            data = {
+                html: code,
+            }
+        }else if(type ==='css'){
+            data = {
+                css: code,
+            }
+        }else if(type === 'javascript'){
+            data = {
+                javascript: code
+            }
+        }
+        data.title = $('#snippitName').val().trim();
+        console.log(data)
+        $("#modal-test-code").val(JSON.stringify(data));
+        $("#modal-test-form").submit();
 
+    });
 
     // saveSnippit function
     function saveSnippit() {
