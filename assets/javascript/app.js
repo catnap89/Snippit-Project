@@ -6,6 +6,7 @@ $(document).ready(function() {
 
     // MODAL
     // on click #main-add-btn, display modal
+    
     $('#main-add-btn').on('shown.bs.modal', function () {
         $('#main-modal-div').trigger('focus')
     })

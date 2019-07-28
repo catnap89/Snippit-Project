@@ -143,3 +143,21 @@ body{
     margin-top: -3px;
 }
 
+
+.float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+  right: 50px;
+  margin-left: 15px;
+	background-color:rgb(73, 17, 228);
+	color:rgb(242, 243, 248);
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px rgb(27, 162, 196);
+}
+
+.my-float{
+	margin-top:22px;
+}
