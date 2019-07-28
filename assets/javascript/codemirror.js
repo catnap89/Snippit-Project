@@ -47,17 +47,16 @@ var editor = CodeMirror.fromTextArea(document.getElementById("codemirror"), {
 								// now type <div> in the editor
   autoRefresh: true, // this fixed the issue with the textcursor located in a wrong place.
 });
-console.log(editor);
+
 
 $('select').on('change', function() {
     language = $('#langOption').find(":selected").attr("data-language");
-    console.log(language);
     editor.setOption("mode", language);
     
 });
   
 
-console.log(editor.mode);
+
 
 /**
  *

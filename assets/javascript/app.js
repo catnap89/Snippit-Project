@@ -48,10 +48,8 @@ $(document).ready(function() {
         var editKey = ''; // variable to store reference key to firebase for editing correspond data
         var textarea = $('.Codemirror-Code');
         var snippit = editor.getValue("\n"); // grab value of the codemirror textarea 
-        console.log("Snippit: " + snippit);
         var name = $('#snippitName').val().trim();
         var codeType = $('#langOption').find(":selected").attr("data-language");
-        console.log("codetype: " + codeType);
 
         // Using conditional statement to prevent data to be pushed to the database when there is no codes writeen in the textaera.
         if (snippit != '') {
@@ -88,10 +86,8 @@ $(document).ready(function() {
         let mainContainer = $(".main-content-container"); 
         let snippit = data.val();
         var editKey = data.key;
-        console.log("editkey: " + editKey);
         // data.forEach(function(childSnapshot) {
         //     var editKey = childSnapshot.key;
-        //     console.log("editKey: " + editKey);
         // })
         if(userID !== null && snippit.userID === userID){
             mainContainer.prepend(`
@@ -120,10 +116,8 @@ $(document).ready(function() {
         let mainContainer = $(".main-content-container"); 
         let snippit = data.val();
         var editKey = data.key;
-        console.log("editkey: " + editKey);
         // data.forEach(function(childSnapshot) {
         //     var editKey = childSnapshot.key;
-        //     console.log("editKey: " + editKey);
         // })
         if(userID !== null && snippit.userID === userID){
             mainContainer.html(`
