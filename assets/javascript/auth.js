@@ -29,6 +29,7 @@ $(document).ready(function () {
             $("#firebaseui-auth-container").hide();
             $("#main-logout-btn").show();
             $("#main-add-btn").show();
+            $("#intro").hide()
         }else{
             userID = null;
             $("#main-logout-btn").hide();
