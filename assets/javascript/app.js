@@ -74,9 +74,9 @@ $(document).ready(function() {
             mainContainer.prepend(`
             <div class="col-sm-12 col-md-6 mt-3 snippets ${editKey}">
                 <div class="card snippit" data-type=${snippit.type}>
-                    <div class="card-header">
-                        <h5 class="card-title">${snippit.name}</h5>
-                        <button class='delete btn' data-editkey="${editKey}"><i class="fas fa-trash"></i></button>
+                    <div class="card-header nav">
+                        <h5 class="card-title d-inline-block mr-auto">${snippit.name}</h5>
+                        <button class="delete btn pull-right" data-editkey="${editKey}"><i class="fas fa-trash"></i></button>
                     </div>
                         
                     <div class="card-body">
