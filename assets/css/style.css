@@ -108,4 +108,7 @@ body{
     margin-top: -3px;
 }
 
-
+/* container that wraps codes inside <pre><code> before sending it to codepen */
+.codepen-container {
+  /* display: none; */
+}
