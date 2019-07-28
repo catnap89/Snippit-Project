@@ -15,6 +15,7 @@ $(document).ready(function() {
     // On click Save Snippit button (#modal-save-btn), push the snippit into firebase database and dynamically generate card with the code snippit.
     $('#modal-save-btn').on('click', saveSnippit);
 
+
     // On click Test Snippit button (#model-test-btn), which pulls up test in code mirror for use.
     $('#modal-test-btn').on('click', function(e){
         e.preventDefault();
@@ -148,9 +149,54 @@ $(document).ready(function() {
 
     })
 
-    function testSnippit () {
-        //Pull up testing code from Code Mirror for current used Snippit
+    // Push Favorites Data to the DB
+    $('#fav-save-btn').on('click', function () {
+        var favName = $('#favoriteName').val().trim();
+        var editKey = '';
+        console.log(favName);
+        console.log(editKey);
+        
+        if (favName !='') {
+            $('#favoriteName').val('');
+            if (editKey == '') {
+            database.ref().child('favorites').push({
+                favName: favName,
+                userID: userID,
+            }),
+            $('#fav-modal-div').modal('hide');
+            } else if (editKey !== '') {
+            database.ref('favorites/' + editKey).update({
+                favName: favName,
+                userID: userID,
+            }),
+            $('#fav-modal-div').modal('hide');
+            editKey = '';
+            }
+        }
 
-    }
+    })
+
+    firebase.database().ref("/favorites").on("child_added", function(data) {
+        // get the current snippits info
+        data.val();
+        let navContainer = $(".v-nav"); 
+        let navID = data.val();
+        let editKey = data.key;
+        let favName = navID.favName;
+        // data.forEach(function(childSnapshot) {
+        //     var editKey = childSnapshot.key;
+        // })
+        if(userID !== null && navID.userID === userID){
+            navContainer.append(`
+            <li class="nav-item ${editKey}">
+                <a class="nav-link" href="#">${favName}</a>
+            </li>
+            `);
+        }
+    });
+
+
+
+  
 })
 
