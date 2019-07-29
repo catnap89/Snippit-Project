@@ -93,12 +93,11 @@ $(document).ready(function() {
         data.val();
         let snippitContainer = $("#snippit-container"); 
         let snippit = data.val();
-        console.log("snippit: " + snippit);
         var editKey = data.key;
 
         if(userID !== null && snippit.userID === userID){
             snippitContainer.prepend(`
-            <div class="col-sm-12 col-md-6 mt-3 snippets ${editKey}" data-key="${editKey}">
+            <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 mt-3 snippets ${editKey}" data-key="${editKey}">
                 <div class="card snippit" data-type=${snippit.type}>
                     <div class="card-header nav">
                         <h5 class="card-title d-inline-block mr-auto">${snippit.name}</h5>
@@ -247,7 +246,6 @@ $(document).ready(function() {
         database.ref('favorites/' + editKey).update({
             
         })
-
        if(userID !== null && navID.userID === userID){
         favContainer.html(`
         <button class="btn btn-dark favorite-btn" data-editkey="${editKey}" data-id="${favID}">${favName}</button>

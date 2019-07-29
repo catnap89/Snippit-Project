@@ -23,6 +23,7 @@ $(document).ready(function () {
 
     firebase.auth().onAuthStateChanged(function (user) {
         if(user){
+            console.log(user)
             userID = user.uid;
             $("#firebaseui-auth-container").hide();
             $("#main-logout-btn").show();
@@ -30,6 +31,7 @@ $(document).ready(function () {
             $("#intro").hide();
             $(".vertical-navbar").addClass("d-md-block");
             $("#float-btn").show();
+            setUserInfo(user.photoURL, user.displayName);
         }else{
             userID = null;
             $("#main-logout-btn").hide();
@@ -39,6 +41,7 @@ $(document).ready(function () {
             $("#intro").show();
             $(".vertical-navbar").removeClass("d-md-block");
             $("#float-btn").hide();
+            removeUserInfo()
         }
     });
 
@@ -48,4 +51,15 @@ $(document).ready(function () {
       });
 })
 
+
+function setUserInfo(image, name){
+    $("#user-container").append(`
+        <img id="user-image" src="${image}"/>
+        <h4 id="user-name">${name}</h4>
+    `)
+}
+
+function removeUserInfo(){
+    $("#user-container").empty();
+}
 
