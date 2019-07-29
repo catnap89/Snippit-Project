@@ -24,12 +24,9 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-
 </head>
 
 <body>
-
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand mr-auto" href="#"><strong>Snippit <i class="fas fa-cut"></i></strong></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
@@ -42,8 +39,8 @@
                 <li class="nav-item">
                     <form class="form-inline my-2 my-lg-0">
                         <!-- Button trigger modal-->
-                        <button type="button" class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal"
-                            data-target="#main-modal-div" id="main-add-btn">Create Snippit </button>
+                        <!-- <button type="button" class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal"
+                            data-target="#main-modal-div" id="main-add-btn">Create Snippit </button> -->
                     </form>
                 </li>
                 <li>
@@ -54,8 +51,7 @@
                 </li>
         </div>
     </nav>
-
-    <div class="container-fluid">
+    <div class="container-fluid fill">
         <div class="row main-content-container justify-content-center">
             <!-- primary display card -->
             <div class="card border-primary mb-3 col-sm-10 col-md-6 justify-self-center" id="intro">
@@ -72,27 +68,24 @@
                         faster access. As a developer, we love to have a more convinient way of coding, so get snipping!
                     </p>
                 </div>
-                <div class="card-footer bg-transparent border-primary" style="text-align: center;">
+                <div class="card-footer bg-transparent border-primary text-center">
                     <p>Let's Get Started!</p>
                     <div id="firebaseui-auth-container"></div>
                 </div>
             </div>
 
             <div class="col-md-2 vertical-navbar d-none">
-                <div class="button-container">
+                <div id="scissors"></div>
+                <div class="button-container ">
                     
                 </div>
             </div>
-            <div class="col-sm-12 col-md-10 row" id="snippit-container">
-
+            
+            <div class="col-sm-12 col-md-10 row mb-3 pb-2" id="snippit-container">
+                    
             </div>
-        </div>
-    </div> <!-- row end-->
-
-
-    <div class="scissors">
-        <div id="scissors"></div>
-    </div>
+        </div><!-- row end-->
+    </div> 
 
 
     <!-- MAIN MODAL -->
@@ -100,8 +93,8 @@
         <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <form>
-                        <div class="form-group row font-weight-bold mt-3 ml-3 mr-3" id="nameSnip">
+                    <form class="fill">
+                        <div class="form-group row font-weight-bold" id="nameSnip">
                             <label for="name-input" class="col-12 col-form-label">Name Your Snippit</label>
                             <div class="col-12">
                                 <input class="form-control" type="name" id="snippitName">
@@ -112,30 +105,35 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-
                 <div class="modal-body">
-                    <div class="btn-group code-type-nav">
-                        <div class="action-buttons"></div>
-                        <select id="langOption" name="language" class="language fill">
-                            <option value="1" data-language="htmlmixed">html</option>
-                            <option value="2" data-language="css">css</option>
-                            <option value="3" data-language="javascript">javascript</option>
-                        </select>
-                    </div>
-
                     <div class="code-container">
                         <!-- CODEMIRROR -->
                         <textarea id="codemirror"></textarea>
                     </div>
-
                 </div>
-                <div class="modal-footer">
+                <div class="modal-footer justify-content-center">
                     <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal" id="model-cancel-btn">Cancel</button> -->
-                    <button type="button" class="btn btn-primary" id="modal-save-btn">Save Snippit</button>
-                    <form action="https://codepen.io/pen/define" method="POST" target="_blank" id="modal-test-form">
-                        <input type="hidden" name="data" id="modal-test-code">
-                        <button type="button" class="btn btn-secondary" id="modal-test-btn">Test
-                            Snippit</button>
+                   
+                    <form action="https://codepen.io/pen/define" method="POST" target="_blank" id="modal-test-form" >
+                        <div class="form-row">
+                            <div class="col-auto">
+                                <div class="btn-group code-type-nav">
+                                    <div class="action-buttons"></div>
+                                    <select id="langOption" name="language" class="language fill form-control">
+                                        <option value="1" data-language="htmlmixed">html</option>
+                                        <option value="2" data-language="css">css</option>
+                                        <option value="3" data-language="javascript">javascript</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <button type="button" class="btn btn-primary form-control" id="modal-save-btn">Save Snippit</button>
+                            </div>
+                            <div class="col-auto">
+                            <input type="hidden" name="data" id="modal-test-code">
+                                <button type="button" class="btn btn-secondary form-control" id="modal-test-btn">Test Snippit</button>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>
