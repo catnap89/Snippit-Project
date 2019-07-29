@@ -112,10 +112,10 @@ $(document).ready(function() {
                     </div>
 
                     <div class="card-footer">
-                        <button id="heart-empty" class="btn btn-dark heartEmpty" data-id="${editKey}" data-title="${snippit.name}">
+                        <button class="heart-empty btn btn-dark" data-id="${editKey}" data-title="${snippit.name}">
                             <span class="far fa-heart"></span> Add As Favorite Snippit
                         </button>
-                        <button id="heart-filled" class="btn btn-dark heartfilled" data-id="${editKey}" data-title="${snippit.name}">
+                        <button class="heart-filled btn btn-dark" data-id="${editKey}" data-title="${snippit.name}">
                             <span class="fas fa-heart"></span> Remove from Favorite
                         </button>
                     </div>
@@ -165,15 +165,17 @@ $(document).ready(function() {
     })
     
     // Favorite Button on click
-    $(document).on('click', '#heart-empty', function() {
-        $('#heart-empty').hide();
-        $('#heart-filled').show();
+    $(document).on('click', '.heart-empty', function() {
         
         // Declare variables
         var editKey = ''; // variable to store reference key to firebase for editing correspond data
         var favoriteID = $(this).attr("data-id"); //editKey of the snippit child
         console.log(favoriteID);
         var favoriteName = $(this).attr("data-title"); // snippit title       
+
+        $(`.heart-empty[data-id="${favoriteID}"]`).hide();
+        $(`.heart-filled[data-id="${favoriteID}"]`).show();
+        
 
         // Push to firebase
         if (editKey == '') { // If there is no editKey value
@@ -213,25 +215,28 @@ $(document).ready(function() {
 
        if(userID !== null && navID.userID === userID){
         favContainer.append(`
-        <button class="btn btn-dark favorite-btn ${editKey}" data-editkey="${editKey}" data-id="${favID}">${favName}</button>
+        <button class="btn btn-dark favorite-btn ${editKey} ${favID}" data-editkey="${editKey}" data-favID="${favID}">${favName}</button>
         `);
         }
        
     });
 
-    $(document).on('click', '#heart-filled', function(data) {
-        $('#heart-empty').show();
-        $('#heart-filled').hide();
+    $(document).on('click', '.heart-filled', function() {
+        var favoriteID = $(this).attr("data-id"); //editKey of the snippit child
+        console.log(favoriteID);     
 
+        $(`.heart-empty[data-id="${favoriteID}"]`).show();
+        $(`.heart-filled[data-id="${favoriteID}"]`).hide();
         // var editKey = data.key
         console.log("HF ek: " + editKey);
 
-        database.ref('favorites/' + editKey).remove();
-        $('.' + editKey).remove();
+        database.ref('favorites/' + favoriteID).remove();
+        $(`.btn[data-favID="${favoriteID}"]`).remove();
+        // $('.' + favoriteID).remove();
         
     })
 
-    database.ref("/favorites").on('child_changed', function(data) {
+    database.ref().child("favorites").on('child_changed', function(data) {
         // get the current snippits info
         data.val();
         let favContainer = $(".button-container"); 
