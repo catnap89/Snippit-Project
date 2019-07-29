@@ -7,7 +7,7 @@ var userID = null;
 
 $(document).ready(function () {
     const uiConfig = {
-        signInSuccessUrl: '/',
+        signInSuccessUrl: `${window.location.pathname}`,
         signInOptions: [
             // Leave the lines as is for the providers you want to offer your users.
             firebase.auth.GithubAuthProvider.PROVIDER_ID,
@@ -23,7 +23,6 @@ $(document).ready(function () {
 
     firebase.auth().onAuthStateChanged(function (user) {
         if(user){
-            console.log(user)
             userID = user.uid;
             $("#firebaseui-auth-container").hide();
             $("#main-logout-btn").show();
