@@ -161,3 +161,9 @@ body{
 .my-float{
 	margin-top:22px;
 }
+
+
+/* buttons */
+#heart-filled {
+  display: none;
+}

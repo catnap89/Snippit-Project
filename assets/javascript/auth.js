@@ -1,8 +1,6 @@
-/* 
 
-    This file handles the authentication with firebase
+// This file handles the authentication with firebase
 
-*/
 
 var userID = null;
 
