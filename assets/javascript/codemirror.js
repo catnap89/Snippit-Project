@@ -1,16 +1,5 @@
 // this will be used for codemirror
 
-// codemirror
-
-// var code = $('.code-editor-textarea')[0];
-// Declaring editor variable and settings (lineNubers, lineWrapping..etc) to pass from CodeMirror.fromTextArea function code variable.
-// var editor = CodeMirror.fromTextArea(code, {
-//     lineNumbers: true,
-//     lineWrapping : true,
-//     cursorBlinkRate: 0,
-    
-// })
-
 
 var language = $('#langOption').find(":selected").attr("data-language");
 

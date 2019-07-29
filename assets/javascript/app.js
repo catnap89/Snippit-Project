@@ -93,10 +93,9 @@ $(document).ready(function() {
         data.val();
         let snippitContainer = $("#snippit-container"); 
         let snippit = data.val();
+        console.log("snippit: " + snippit);
         var editKey = data.key;
-        // data.forEach(function(childSnapshot) {
-        //     var editKey = childSnapshot.key;
-        // })
+
         if(userID !== null && snippit.userID === userID){
             snippitContainer.prepend(`
             <div class="col-sm-12 col-md-6 mt-3 snippets ${editKey}" data-key="${editKey}">
@@ -110,6 +109,15 @@ $(document).ready(function() {
                         <p class="card-text">
                             <textarea disabled class="code-text codemirror-cursor">${snippit.snippit}</textarea>
                         </p>
+                    </div>
+
+                    <div class="card-footer">
+                        <button id="heart-empty" class="btn btn-dark heartEmpty" data-id="${editKey}" data-title="${snippit.name}">
+                            <span class="far fa-heart"></span> Add As Favorite Snippit
+                        </button>
+                        <button id="heart-filled" class="btn btn-dark heartfilled" data-id="${editKey}" data-title="${snippit.name}">
+                            <span class="fas fa-heart"></span> Remove from Favorite
+                        </button>
                     </div>
                 </div>
             </div>
@@ -155,53 +163,146 @@ $(document).ready(function() {
       $('.' + editKey).remove();
 
     })
-
-    // Push Favorites Data to the DB
-    $('#fav-save-btn').on('click', function () {
-        var favName = $('#favoriteName').val().trim();
-        var editKey = '';
-        console.log(favName);
-        console.log(editKey);
+    
+    // Favorite Button on click
+    $(document).on('click', '#heart-empty', function() {
+        $('#heart-empty').hide();
+        $('#heart-filled').show();
         
-        if (favName !='') {
-            $('#favoriteName').val('');
-            if (editKey == '') {
-            database.ref().child('favorites').push({
-                favName: favName,
-                userID: userID,
-            }),
-            $('#fav-modal-div').modal('hide');
-            } else if (editKey !== '') {
-            database.ref('favorites/' + editKey).update({
-                favName: favName,
-                userID: userID,
-            }),
-            $('#fav-modal-div').modal('hide');
-            editKey = '';
-            }
-        }
+        // Declare variables
+        var editKey = ''; // variable to store reference key to firebase for editing correspond data
+        var favoriteID = $(this).attr("data-id"); //editKey of the snippit child
+        console.log(favoriteID);
+        var favoriteName = $(this).attr("data-title"); // snippit title       
 
+        // Push to firebase
+        if (editKey == '') { // If there is no editKey value
+            database.ref().child('favorites').push({ // push the variables to the database in a child named 'snippits'
+                favoriteID: favoriteID,
+                favoriteName: favoriteName,
+                userID: userID,
+            })
+        } else if (editKey !== '') { // If there is editKey value --- THIS WILL BE USED FOR UPDATING EXISTING DATA. IF WE LET USERS TO CHANGE, MODIFY, ETC PREVIOUSLY SAVED SNIPPIT
+            database.ref('favorites/' + editKey).update({ // Locate database with provided editKey value as it's unique key in 'snippits' path and update database
+                favoriteID: favoriteID,
+                favoriteName: favoriteName,
+                userID: userID,
+            })
+            editKey = ''; // Empty the editKey value once else if conditional is met and database is updated
+        } 
+ 
+    })
+    //
+    var editKey = '';
+    firebase.database().ref("/favorites").on("child_added", function(data) {
+        // get the current favoritebutton info
+        data.val();
+        let favContainer = $(".button-container"); 
+        let navID = data.val();
+        console.log("navID: " + navID);
+        let favName = navID.favoriteName;
+        console.log("favName: " + favName);
+        let favID = navID.favoriteID;
+        console.log("favID: " + favID);
+        editKey = data.key;
+        console.log("favorite editkey: " + editKey)
+
+        database.ref('favorites/' + editKey).update({
+            
+        })
+
+       if(userID !== null && navID.userID === userID){
+        favContainer.append(`
+        <button class="btn btn-dark favorite-btn ${editKey}" data-editkey="${editKey}" data-id="${favID}">${favName}</button>
+        `);
+        }
+       
+    });
+
+    $(document).on('click', '#heart-filled', function(data) {
+        $('#heart-empty').show();
+        $('#heart-filled').hide();
+
+        // var editKey = data.key
+        console.log("HF ek: " + editKey);
+
+        database.ref('favorites/' + editKey).remove();
+        $('.' + editKey).remove();
+        
     })
 
-    firebase.database().ref("/favorites").on("child_added", function(data) {
+    database.ref("/favorites").on('child_changed', function(data) {
         // get the current snippits info
         data.val();
-        let navContainer = $(".v-nav"); 
+        let favContainer = $(".button-container"); 
         let navID = data.val();
-        let editKey = data.key;
-        let favName = navID.favName;
-        // data.forEach(function(childSnapshot) {
-        //     var editKey = childSnapshot.key;
-        // })
-        if(userID !== null && navID.userID === userID){
-            navContainer.append(`
-            <li class="nav-item ${editKey}">
-                <a class="nav-link" href="#">${favName}</a>
-            </li>
-            `);
+        console.log("navID: " + navID);
+        let favName = navID.favoriteName;
+        console.log("favName: " + favName);
+        let favID = navID.favoriteID;
+        console.log("favID: " + favID);
+        editKey = data.key;
+        console.log("favorite editkey: " + editKey)
+
+        database.ref('favorites/' + editKey).update({
+            
+        })
+
+       if(userID !== null && navID.userID === userID){
+        favContainer.html(`
+        <button class="btn btn-dark favorite-btn" data-editkey="${editKey}" data-id="${favID}">${favName}</button>
+        `);
         }
+
     });
-})
+
+
+    // Push Favorites Data to the DB
+    // $('#fav-save-btn').on('click', function () {
+    //     var favName = $('#favoriteName').val().trim();
+    //     var editKey = '';
+    //     console.log(favName);
+    //     console.log(editKey);
+        
+    //     if (favName !='') {
+    //         $('#favoriteName').val('');
+    //         if (editKey == '') {
+    //         database.ref().child('favorites').push({
+    //             favName: favName,
+    //             userID: userID,
+    //         }),
+    //         $('#fav-modal-div').modal('hide');
+    //         } else if (editKey !== '') {
+    //         database.ref('favorites/' + editKey).update({
+    //             favName: favName,
+    //             userID: userID,
+    //         }),
+    //         $('#fav-modal-div').modal('hide');
+    //         editKey = '';
+    //         }
+    //     }
+
+    // })
+
+    // firebase.database().ref("/favorites").on("child_added", function(data) {
+    //     // get the current snippits info
+    //     data.val();
+    //     let navContainer = $(".v-nav"); 
+    //     let navID = data.val();
+    //     let editKey = data.key;
+    //     let favName = navID.favName;
+    //     // data.forEach(function(childSnapshot) {
+    //     //     var editKey = childSnapshot.key;
+    //     // })
+    //     if(userID !== null && navID.userID === userID){
+    //         navContainer.append(`
+    //         <li class="nav-item ${editKey}">
+    //             <a class="nav-link" href="#">${favName}</a>
+    //         </li>
+    //         `);
+    //     }
+    // });
+})  
 
 function highlightSnippets(key){
     let snippit = $(`.snippets[data-key="${key}"]`);
