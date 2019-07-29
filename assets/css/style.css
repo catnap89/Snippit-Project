@@ -55,15 +55,6 @@ body{
 }
 
 #main-logout-btn {
-    box-shadow: 0 0 10px #1607f3;
-    background-color:  white;
-    color: black;
-    text-shadow: 0 0 5px #fff, 0 0 20px #fff, 0 0 20px #1607f3, 0 0 30px #1607f3, 0 0 40px #1607f3, 0 0 55px #1607f3, 0 0 75px #1607f3;
-    display: none;
-    padding: 12px;
-    text-decoration: none;
-    box-shadow: 0 0 5px #1607f3; 
-    margin-right: 10px;
 }
 
 #intro {
