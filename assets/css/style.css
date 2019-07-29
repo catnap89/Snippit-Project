@@ -83,10 +83,6 @@ body{
   margin-bottom: 10px;
 }
 
-#nameSnip {
-  box-shadow: 0 0 5px #68c2f7;
-  border: 1px solid rgb(97, 214, 250); 
-}
 
 #snippitName {
   margin-bottom: 10px;
@@ -107,40 +103,14 @@ body{
 
 #scissors {
     height: 43px; /* image height */
-    width: 90%;
-    margin: auto auto;
+    width: 50px;
     background-image: url('http://i.stack.imgur.com/cXciH.png');
     background-repeat: no-repeat;
-    background-position: right;
-    position: relative;
-    margin-left: 20px;
-}
-#scissors div {
-    position: relative;
+    position: absolute;
     top: 50%;
-    border-top: 3px dashed black;
-    margin-top: -3px;
-    margin-left: 20px;
-}
-
-#scissors {
-    height: 43px; /* image height */
-    width: 100%;
-    margin: auto auto;
-    background-image: url('http://i.stack.imgur.com/cXciH.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    position: relative;
-    overflow: hidden;
-}
-
-#scissors:after {
-    content: "";
-    position: relative;
-    top: 50%;
-    display: block;
-    border-top: 3px dashed black;
-    margin-top: -3px;
+    right: -10px;
+    -webkit-transform: rotate(270deg);
+    transform: rotate(270deg);
 }
 
 
@@ -148,14 +118,14 @@ body{
 	position:fixed;
 	width:60px;
 	height:60px;
-	bottom:40px;
-  right: 50px;
+	bottom: 5%;
+  right: 5%;
   margin-left: 15px;
 	background-color:rgb(73, 17, 228);
 	color:rgb(242, 243, 248);
 	border-radius:50px;
 	text-align:center;
-	box-shadow: 2px 2px 3px rgb(27, 162, 196);
+	box-shadow: 2px 2px 3px rgb(3, 23, 27);
 }
 
 .my-float{
@@ -166,4 +136,9 @@ body{
 /* buttons */
 #heart-filled {
   display: none;
+}
+
+#snippit-container{
+  border-left: 3px dashed black;
+  height: 100%;
 }
