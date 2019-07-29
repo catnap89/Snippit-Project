@@ -163,11 +163,22 @@ $(document).ready(function() {
 
     })
     
+
+    /*
+    heart-empty Btn (when snppit is not added in favorites) /
+    heart-filled btn (when snippit is added in favorites) / 
+    favorite btn (dynamically created button that will be used to display snippits that are saved in favorite)/
+
+    
+    
+
+    */
+    var editKey = '';
     // Favorite Button on click
     $(document).on('click', '.heart-empty', function() {
         
         // Declare variables
-        var editKey = ''; // variable to store reference key to firebase for editing correspond data
+        
         var favoriteID = $(this).attr("data-id"); //editKey of the snippit child
         console.log(favoriteID);
         var favoriteName = $(this).attr("data-title"); // snippit title       
@@ -182,7 +193,8 @@ $(document).ready(function() {
                 favoriteID: favoriteID,
                 favoriteName: favoriteName,
                 userID: userID,
-            })
+            }),
+            $(`.heart-filled[data-id="${favoriteID}"]`).attr("data-editkey", editKey);
         } else if (editKey !== '') { // If there is editKey value --- THIS WILL BE USED FOR UPDATING EXISTING DATA. IF WE LET USERS TO CHANGE, MODIFY, ETC PREVIOUSLY SAVED SNIPPIT
             database.ref('favorites/' + editKey).update({ // Locate database with provided editKey value as it's unique key in 'snippits' path and update database
                 favoriteID: favoriteID,
@@ -194,7 +206,7 @@ $(document).ready(function() {
  
     })
     //
-    var editKey = '';
+    
     firebase.database().ref("/favorites").on("child_added", function(data) {
         // get the current favoritebutton info
         data.val();
@@ -223,13 +235,14 @@ $(document).ready(function() {
     $(document).on('click', '.heart-filled', function() {
         var favoriteID = $(this).attr("data-id"); //editKey of the snippit child
         console.log(favoriteID);     
+        var editKey = $(this).attr("data-editkey");
 
         $(`.heart-empty[data-id="${favoriteID}"]`).show();
         $(`.heart-filled[data-id="${favoriteID}"]`).hide();
         // var editKey = data.key
         console.log("HF ek: " + editKey);
 
-        database.ref('favorites/' + favoriteID).remove();
+        database.ref('favorites/' + editKey).remove();
         $(`.btn[data-favID="${favoriteID}"]`).remove();
         // $('.' + favoriteID).remove();
         
