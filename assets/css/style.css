@@ -1,3 +1,7 @@
+*{
+  box-sizing: border-box;
+}
+
 body{
   background: url(https://ycreativegroup.com/wp-content/uploads/2015/12/y-background.jpg);
 }
@@ -19,12 +23,11 @@ body{
   box-shadow: 0 0 10px #1403f7;
   border: 1px solid rgb(97, 214, 250);
   width: 100%;
-  height: 250px;
+  min-height: 100px;
 }
 
 .fav-add-btn {
   box-shadow: 0 0 10px #1403f7;
-  
 
 }
 
@@ -98,8 +101,8 @@ body{
     background-image: url('http://i.stack.imgur.com/cXciH.png');
     background-repeat: no-repeat;
     position: absolute;
-    top: 50%;
-    right: -10px;
+    bottom: 0;
+    right: -12px;
     -webkit-transform: rotate(270deg);
     transform: rotate(270deg);
 }
@@ -132,4 +135,36 @@ body{
 #snippit-container{
   border-left: 3px dashed black;
   height: 100%;
+}
+
+#user-container{
+  display: none;
+  margin-right: 1em;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#user-image{
+  text-align: center;
+    width: 100%;
+    height: auto;
+    border-left: 1px dashed rgb(25, 29, 58);
+    border-top: 1px dashed rgb(25, 29, 58);
+    border-right: 1px dashed rgb(25, 29, 58);
+}
+
+#user-name{
+  font-size: 1.3rem;
+  background-color: rgb(25, 29, 58);
+  color: white;
+  width: 100%;
+  text-align: center;
+  padding: .2em;
+}
+
+@media (min-width: 900px){
+  #user-container{
+    display: flex;
+  }
 }
