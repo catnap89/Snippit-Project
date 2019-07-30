@@ -9,16 +9,14 @@
     <title>Snippit</title>
     <link rel="shortcut icon" type="image/png" href="assets/images/icon.png">
 
-    <!-- reset.css -->
-    <link rel="stylesheet" href="assets/css/reset.css">
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <!--css-->
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/4.1.0/firebaseui.css">
     <!-- codemirror css cdn-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/codemirror.css">
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/theme/material.css"> -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/theme/mdn-like.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.2/theme/cobalt.css">
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -66,23 +64,18 @@
                     <div id="firebaseui-auth-container"></div>
                 </div>
             </div>
-
             <div class="col-md-2 vertical-navbar d-none">
                 <div id="scissors"></div>
                 <div id="user-container">
-    
                 </div>
                 <h5>Favorites:</h5>
                 <div class="button-container ">
-                    
                 </div>
             </div>
-            
             <div class="col-sm-12 col-md-10 row mb-3 pb-2" id="snippit-container">
-                    
             </div>
         </div><!-- row end-->
-    </div> 
+    </div>
 
 
     <!-- MAIN MODAL -->
@@ -110,8 +103,8 @@
                 </div>
                 <div class="modal-footer justify-content-center">
                     <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal" id="model-cancel-btn">Cancel</button> -->
-                   
-                    <form action="https://codepen.io/pen/define" method="POST" target="_blank" id="modal-test-form" >
+
+                    <form action="https://codepen.io/pen/define" method="POST" target="_blank" id="modal-test-form">
                         <div class="form-row">
                             <div class="col-auto">
                                 <div class="btn-group code-type-nav">
@@ -124,11 +117,13 @@
                                 </div>
                             </div>
                             <div class="col-auto">
-                                <button type="button" class="btn btn-primary form-control" id="modal-save-btn">Save Snippit</button>
+                                <button type="button" class="btn btn-primary form-control" id="modal-save-btn">Save
+                                    Snippit</button>
                             </div>
                             <div class="col-auto">
-                            <input type="hidden" name="data" id="modal-test-code">
-                                <button type="button" class="btn btn-secondary form-control" id="modal-test-btn">Test Snippit</button>
+                                <input type="hidden" name="data" id="modal-test-code">
+                                <button type="button" class="btn btn-secondary form-control" id="modal-test-btn">Test
+                                    Snippit</button>
                             </div>
                         </div>
                     </form>
@@ -137,10 +132,9 @@
         </div>
     </div> <!-- Modal end-->
 
-    <a href="#" class="float" id="float-btn" data-target="#main-modal-div" data-toggle="modal"> 
+    <a href="#" class="float" id="float-btn" data-target="#main-modal-div" data-toggle="modal">
         <i class="fa fa-plus my-float"></i>
-    </a> 
-
+    </a>
 
     <!-- jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
