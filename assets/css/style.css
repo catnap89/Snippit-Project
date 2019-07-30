@@ -1,5 +1,6 @@
 *{
   box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
 }
 
 body{
@@ -11,7 +12,6 @@ body{
 }
   
 .snippit {
-   
     box-shadow: 0 0 10px #1607f3;
     margin-left: 40px;
     margin-right: 40px;

@@ -178,7 +178,6 @@ $(document).ready(function() {
         // Declare variables
         
         var favoriteID = $(this).attr("data-id"); //editKey of the snippit child
-        console.log(favoriteID);
         var favoriteName = $(this).attr("data-title"); // snippit title       
 
         $(`.heart-empty[data-id="${favoriteID}"]`).hide();
@@ -210,14 +209,9 @@ $(document).ready(function() {
         data.val();
         let favContainer = $(".button-container"); 
         let navID = data.val();
-        console.log("navID: " + navID);
         let favName = navID.favoriteName;
-        console.log("favName: " + favName);
         let favID = navID.favoriteID;
-        console.log("favID: " + favID);
         editKey = data.key;
-        console.log("favorite editkey: " + editKey)
-
         database.ref('favorites/' + editKey).update({
             
         })
@@ -231,15 +225,12 @@ $(document).ready(function() {
     });
 
     $(document).on('click', '.heart-filled', function() {
-        var favoriteID = $(this).attr("data-id"); //editKey of the snippit child
-        console.log(favoriteID);     
+        var favoriteID = $(this).attr("data-id"); //editKey of the snippit child 
         var editKey = $(this).attr("data-editkey");
 
         $(`.heart-empty[data-id="${favoriteID}"]`).show();
         $(`.heart-filled[data-id="${favoriteID}"]`).hide();
         // var editKey = data.key
-        console.log("HF ek: " + editKey);
-
         database.ref('favorites/' + editKey).remove();
         $(`.btn[data-favID="${favoriteID}"]`).remove();
         // $('.' + favoriteID).remove();
@@ -251,14 +242,10 @@ $(document).ready(function() {
         data.val();
         let favContainer = $(".button-container"); 
         let navID = data.val();
-        console.log("navID: " + navID);
+       
         let favName = navID.favoriteName;
-        console.log("favName: " + favName);
         let favID = navID.favoriteID;
-        console.log("favID: " + favID);
         editKey = data.key;
-        console.log("favorite editkey: " + editKey)
-
         database.ref('favorites/' + editKey).update({
             
         })
