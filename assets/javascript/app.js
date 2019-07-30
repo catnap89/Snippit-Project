@@ -24,7 +24,6 @@ $(document).ready(function() {
         let data = {}
         let code = editor.getValue("\n");
         var snippitTitle = $("#snippitName").val();
-        console.log(type)
         if (code != '' && snippitTitle != '') {
 
             if(type === 'htmlmixed'){
@@ -41,7 +40,6 @@ $(document).ready(function() {
                 }
             }
             data.title = $('#snippitName').val().trim();
-            console.log(data)
             $("#modal-test-code").val(JSON.stringify(data));
             $("#modal-test-form").submit();
 

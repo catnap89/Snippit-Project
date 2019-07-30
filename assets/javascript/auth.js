@@ -27,7 +27,7 @@ $(document).ready(function () {
             $("#firebaseui-auth-container").hide();
             $("#main-logout-btn").show();
             $("#main-add-btn").show();
-            $("#intro").hide();
+            $("#intro").removeClass("d-block");
             $(".vertical-navbar").addClass("d-md-block");
             $("#float-btn").show();
             setUserInfo(user.photoURL, user.displayName);
@@ -37,10 +37,10 @@ $(document).ready(function () {
             $("#main-add-btn").hide();
             $(".snippets").remove(); 
             $("#firebaseui-auth-container").show();
-            $("#intro").show();
+            $("#intro").addClass("d-block");
             $(".vertical-navbar").removeClass("d-md-block");
             $("#float-btn").hide();
-            removeUserInfo()
+            removeUserInfo();
         }
     });
 
